@@ -9,8 +9,8 @@ _EXECscript3 = 'player execVM "'+_pathtoweapon+'%1"';
 _EXECscript4 = 'player execVM "'+_pathtoshields+'%1"';
 _EXECscript5 = 'player execVM "'+_pathtovehicles+'%1"';
 //customise these menus to fit your server
-if ((getPlayerUID player) in ["#######","#######"]) then { //all admins
-	if ((getPlayerUID player) in ["#####","#######"]) then { //mods
+if ((getPlayerUID player) in ["37682310","#######"]) then { //all admins
+	if ((getPlayerUID player) in ["37682310","#######"]) then { //mods
         adminmenu =
         [
 			["",true],
@@ -20,7 +20,7 @@ if ((getPlayerUID player) in ["#######","#######"]) then { //all admins
 				["", [-1], "", -5, [["expression", ""]], "1", "0"],
 			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]	
         ];};
-	if ((getPlayerUID player) in ["######","#######"]) then { //admins
+	if ((getPlayerUID player) in ["37682310","#######"]) then { //admins
         adminmenu =
         [
 			["",true],
@@ -30,7 +30,7 @@ if ((getPlayerUID player) in ["#######","#######"]) then { //all admins
 				["", [-1], "", -5, [["expression", ""]], "1", "0"],
 			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]	
         ];};
-	if ((getPlayerUID player) in ["#######","#######"]) then { // super admins
+	if ((getPlayerUID player) in ["37682310","#######"]) then { // super admins
 		adminmenu =
 		[
 			["",true],

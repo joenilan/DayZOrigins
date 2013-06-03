@@ -71,7 +71,8 @@ if (!isDedicated) then {
 //Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
 //	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
-	_playerMonitor = [] execFSM "admintools\player_monitor.fsm"; //Admin Tools Player Monitor
+//Admin Tools Player Monitor
+	_playerMonitor = [] execFSM "admintools\player_monitor.fsm";
 
 //Login Camera
 	//_nul = [] execVM "Camera\loginCamera.sqf";
