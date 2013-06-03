@@ -39,26 +39,30 @@ All credit goes to Cortez for all the hard work to make this mod available.
 
 Look for:
 <pre>
-//Debug Info
-            _headShots =    player getVariable["headShots",0];
-            _kills =                player getVariable["zombieKills",0];
-            _killsH =               player getVariable["humanKills",0];
-            _killsB =               player getVariable["banditKills",0];
-            _humanity =             player getVariable["humanity",0];
-            _zombies =              count entities "zZombie_Base";
-            _zombiesA =     {alive _x} count entities "zZombie_Base";
-
-                    hintSilent parseText format ["
-            <t size='1.15' font='Bitstream' color='#5882FA'>Visit: www.epm-gaming.co.uk</t><br/><br/>
+	<t size='1.15' font='Bitstream' color='#D60000'>DayZ Origins</t><br/>
+	<t size='1.15' font='Bitstream' color='#5882FA'>Survived %7 Days</t><br/>
+	<t size='0.95' font='Bitstream' align='left' color='#FFBF00'>Players Online: </t><t size='0.95 'font='Bitstream' align='right'>%12</t><br/>
+	<t size='0.95' font='Bitstream' align='left' color='#FFBF00'>Murders: </t><t size='0.95' font='Bitstream' align='right'>%4</t><br/>
+	<t size='0.95' font='Bitstream' align='left' color='#FFBF00'>Bandits Killed: </t><t size='0.95' font='Bitstream' align='right'>%5</t><br/>
+	<t size='0.95' font='Bitstream' align='left' color='#FFBF00'>Zombies Killed: </t><t size='0.95' font='Bitstream' align='right'>%2</t><br/>
+	<t size='0.95' font='Bitstream' align='left' color='#FFBF00'>Zombies (alive/total): </t><t size='0.95' font='Bitstream' align='right'>%9/%8</t><br/>
+	<t size='0.95' font='Bitstream' align='left' color='#FFBF00'>Humanity: </t><t size='0.95' font='Bitstream' align='right'>%6</t><br/>
+	<t size='0.95' font='Bitstream' align='left' color='#FFBF00'>Blood: </t><t size='0.95' font='Bitstream' align='right'>%11</t><br/>
+	<t size='1.25' font='Bitstream'align='center' color='#2ECCFA'>Fps: %10</t><br/>",
 </pre>
     
-Edit last line.
+Edit the first line.
 
-<u><b>Editing loginCamera.sqf:</b></u>
 
-Look for:
+<u><b>Enabling/Editing loginCamera.sqf:</b></u>
 <pre>
-_welcomeMessage = format["Welcome to EPM Gamings's GB 500 #2 Server %1, Enjoy your stay!",format["%1", name player]];
+<b>init.sqf</b> Look for:
+//_nul = [] execVM "Camera\loginCamera.sqf";
+
+Remove the double slashes on the line above to enable Login Camera
+
+<b>/Camera/loginCamera.sqf</b> Look for:
+_welcomeMessage = format["Welcome to DayZ Origin Servers %1, Enjoy your stay!",format["%1", name player]];
 </pre>
 
 Edit this line.
@@ -73,14 +77,18 @@ Edit this line.
 <u><b>Add-Ons</b></u>
 ============================
 
-<b>Auto Refuelling<b>
+<b>AVAIALBLE:</b>
+<b>Color Corrections</b> (Clear Contrast, will test others later)
+<b>Auto Refueling</b>
+<b>Sarge's AI</b>
+<b>Self Bloodbag</b>
+<b>Lift/Tow</b> (Needs Survival Vehicle modifications)
+<b>Fast Rope</b> (Needs testing)
+<b>Earthquakes</b>
 
-To enable auto refuelling:
-- Edit \MPMissions\dayz_1.origins.tavi\init.sqf
-- Look for:
-<pre>
-	//Remove the double slashes on the line below to enable auto refuelling
-	//[] execVM "Scripts\kh_actions.sqf";
-</pre>
-- Remove the double slashes to enable the add-on, save and restart the server.
+<b>FUTURE:</b>
+Air Dropped Cars
+Air Dropped Care Packages
+Heli Crash Animations
+
 (NOTE:  Folders inside the \MPMissions\ folder don't have to be packed to .pbo format)
