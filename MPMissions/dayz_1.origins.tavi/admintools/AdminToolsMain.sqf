@@ -3,14 +3,16 @@ _pathtoskins = "admintools\skins\";
 _pathtoweapon = "admintools\weaponkits\";
 _pathtoshields = "admintools\shields\";
 _pathtovehicles = "admintools\vehicles\";
+_pathdebug = "debug\";
 _EXECscript1 = 'player execVM "'+_pathtotools+'%1"';
 _EXECscript2 = 'player execVM "'+_pathtoskins+'%1"';
 _EXECscript3 = 'player execVM "'+_pathtoweapon+'%1"';
 _EXECscript4 = 'player execVM "'+_pathtoshields+'%1"';
 _EXECscript5 = 'player execVM "'+_pathtovehicles+'%1"';
+_execdebug = 'player execVM "'+_pathdebug+'%1"';
 //customise these menus to fit your server
-if ((getPlayerUID player) in ["37682310","#######"]) then { //all admins
-	if ((getPlayerUID player) in ["37682310","#######"]) then { //mods
+if ((getPlayerUID player) in ["37682310"]) then { //all admins
+	if ((getPlayerUID player) in ["37682310"]) then { //mods
         adminmenu =
         [
 			["",true],
@@ -20,7 +22,7 @@ if ((getPlayerUID player) in ["37682310","#######"]) then { //all admins
 				["", [-1], "", -5, [["expression", ""]], "1", "0"],
 			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]	
         ];};
-	if ((getPlayerUID player) in ["37682310","#######"]) then { //admins
+	if ((getPlayerUID player) in ["37682310"]) then { //admins
         adminmenu =
         [
 			["",true],
@@ -30,19 +32,27 @@ if ((getPlayerUID player) in ["37682310","#######"]) then { //all admins
 				["", [-1], "", -5, [["expression", ""]], "1", "0"],
 			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]	
         ];};
-	if ((getPlayerUID player) in ["37682310","#######"]) then { // super admins
+	if ((getPlayerUID player) in ["37682310"]) then { // super admins
 		adminmenu =
 		[
 			["",true],
-				["Tools Menu", [2], "#USER:ToolsMenu", -5, [["expression", ""]], "1", "1"],
-				["Skins Menu", [3], "#USER:SkinsMenu", -5, [["expression", ""]], "1", "1"],
-				["Weapon Kits", [4], "#USER:WeaponMenu", -5, [["expression", ""]], "1", "1"],
-				["Shields Menu", [5], "#USER:ShieldMenu", -5, [["expression", ""]], "1", "1"],
-				["Vehicle Menu", [6], "#USER:VehicleMenu", -5, [["expression", ""]], "1", "1"],
+				["Toggle Debug", [2], "", -5, [["expression", format[_execdebug,"playerstats.sqf"]]], "1", "1"],
+				["Tools Menu", [3], "#USER:ToolsMenu", -5, [["expression", ""]], "1", "1"],
+				["Skins Menu", [4], "#USER:SkinsMenu", -5, [["expression", ""]], "1", "1"],
+				["Weapon Kits", [5], "#USER:WeaponMenu", -5, [["expression", ""]], "1", "1"],
+				["Shields Menu", [6], "#USER:ShieldMenu", -5, [["expression", ""]], "1", "1"],
+				["Vehicle Menu", [7], "#USER:VehicleMenu", -5, [["expression", ""]], "1", "1"],
 				["", [-1], "", -5, [["expression", ""]], "1", "0"],
 			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]		
 		];};
-};
+} else {
+adminmenu =
+[
+	["",true],
+		["Toggle Debug", [2], "", -5, [["expression", format[_execdebug,"playerstats.sqf"]]], "1", "1"],
+		["", [-1], "", -5, [["expression", ""]], "1", "0"],
+	["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
+];};
 //customise to fit
 ModToolsMenu =
 [

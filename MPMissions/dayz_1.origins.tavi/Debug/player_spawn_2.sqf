@@ -394,6 +394,7 @@ while {true} do {
 	<t size='0.95' font='Bitstream' align='left' color='#FFBF00'>Bandits Killed: </t><t size='0.95' font='Bitstream' align='right'>%5</t><br/>
 	<t size='0.95' font='Bitstream' align='left' color='#FFBF00'>Zombies Killed: </t><t size='0.95' font='Bitstream' align='right'>%2</t><br/>
 	<t size='0.95' font='Bitstream' align='left' color='#FFBF00'>Zombies (alive/total): </t><t size='0.95' font='Bitstream' align='right'>%9/%8</t><br/>
+	<t size='0.95' font='Bitstream' align='left' color='#FFBF00'>Headshots: </t><t size='0.95' font='Bitstream' align='right'>%3</t><br/>
 	<t size='0.95' font='Bitstream' align='left' color='#FFBF00'>Humanity: </t><t size='0.95' font='Bitstream' align='right'>%6</t><br/>
     <t size='0.95' font='Bitstream' align='left' color='#FFBF00'>Blood: </t><t size='0.95' font='Bitstream' align='right'>%11</t><br/>
 	<t size='1.25' font='Bitstream'align='center' color='#2ECCFA'>Fps: %10</t><br/>",

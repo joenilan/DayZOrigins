@@ -32,19 +32,19 @@ SAR_DEBUGMONITOR= false;
 // -----------------------------------------------
 
 // maximum number of groups / grid
-SAR_max_grps_bandits = 1;
-SAR_max_grps_soldiers = 1;
-SAR_max_grps_survivors = 1;
+SAR_max_grps_bandits = 2;
+SAR_max_grps_soldiers = 2;
+SAR_max_grps_survivors = 2;
 
 // chance for a group to spawn (1-100)
-SAR_chance_bandits = 75;
-SAR_chance_soldiers = 30;
-SAR_chance_survivors = 50;
+SAR_chance_bandits = 100;
+SAR_chance_soldiers = 100;
+SAR_chance_survivors = 100;
 
 // maximum size of group (including Leader)
-SAR_max_grpsize_bandits = 5;
-SAR_max_grpsize_soldiers = 7;
-SAR_max_grpsize_survivors = 5;
+SAR_max_grpsize_bandits = 1;
+SAR_max_grpsize_soldiers = 1;
+SAR_max_grpsize_survivors = 2;
 
 
 // -----------------------------------------------
@@ -151,7 +151,7 @@ SAR_DELETE_TIMEOUT = 600; // 10 minutes
 // -----------------------------------------------
 
 // the max range in meters within AI is detecting Zombies and player bandits and makes them hostile - the bigger this value, the more CPU needed
-SAR_DETECT_HOSTILE = 150;
+SAR_DETECT_HOSTILE = 250;
 
 // the max range in meters within AI is detecting player bandits from a vehicle, e.g. heli or land vehicle and makes them hostile - the bigger this value, the more CPU needed
 SAR_DETECT_HOSTILE_FROM_VEHICLE = 300;
