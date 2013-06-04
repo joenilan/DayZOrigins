@@ -38,7 +38,7 @@ SAR_max_grps_survivors = 2;
 
 // chance for a group to spawn (1-100)
 SAR_chance_bandits = 100;
-SAR_chance_soldiers = 100;
+SAR_chance_soldiers = 50;
 SAR_chance_survivors = 100;
 
 // maximum size of group (including Leader)
