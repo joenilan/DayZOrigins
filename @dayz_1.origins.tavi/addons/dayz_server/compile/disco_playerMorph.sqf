@@ -186,7 +186,7 @@ diag_log format["DEBUG: Player %1 [%2] added to botPlayers: %3",_playerName,_pla
 _isDead = _newUnit getVariable["USEC_isDead",false];
 _doLoop = 0;
 diag_log format["DEBUG: START _doLoop %1,_isDead=%2",_doLoop,_isDead];
-while { _doLoop < 40 && !_isDead } do 
+while { _doLoop < 2 && !_isDead } do 
 {
 _isDead = _newUnit getVariable["USEC_isDead",false];
 _doLoop = _doLoop + 1;

@@ -126,7 +126,7 @@ if (!isDedicated) then {
 				_control3 ctrlSetText "\z\addons\dayz_code\gui\DayzOrigins.paa";
 				_timeOut = _timeOut + 1;
 				sleep 0.1;
-				if(_timeOut == 600) then { Origins_connect = true; }; //60sec
+				if(_timeOut == 1) then { Origins_connect = true; }; //60sec
 			};
 				endLoadingScreen;
 			if ( !dayz_clientPreload ) then {
