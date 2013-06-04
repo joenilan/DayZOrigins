@@ -1590,8 +1590,8 @@ MON_GetNearestBuildings = {
 	
 
 	//La altura m�nima es 2 porque hay muchos edificios q devuelven 2 de altura pero no se puede entrar en ellos.
-	if ( minfloors == 0  ) then {
-		minfloors = 2;
+	if ( _minfloors == 0  ) then {
+		_minfloors = 2;
 	 };	
 	
 	// _posinfo: [0,0]=no house near, [obj,0]=house near, but no roof positions, [obj,pos]=house near, with roof pos

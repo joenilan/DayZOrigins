@@ -1,6 +1,6 @@
 // =========================================================================================================
 //  SAR_AI - DayZ AI library
-//  Version: 1.5.0 
+//  Version: 1.5.1 
 //  Author: Sarge (sarge@krumeich.ch) 
 //
 //		Wiki: to come
@@ -49,7 +49,7 @@ _aikiller_group_side = side (group _aikiller);
 // retrieve AI type from the killed AI
 _ai_type = _ai getVariable ["SAR_AI_type",""];
 
-// retrieve AI type from the killed AI
+// retrieve AI type from the killer AI
 _ai_killer_type = _aikiller getVariable ["SAR_AI_type",""];
 
 
@@ -113,7 +113,7 @@ if (SAR_HITKILL_DEBUG) then {
 
 if(isPlayer _aikiller) then {
     
-    if (_aikilled_group_side == SAR_AI_friendly_side) then {
+    if (_aikilled_side == SAR_AI_friendly_side) then {
         if(SAR_DEBUG)then{diag_log format["SAR_DEBUG: Adjusting humanity for survivor or soldier kill by %2 for %1",_aikiller,SAR_surv_kill_value];};
         _humanity = _aikiller getVariable ["humanity",0];
         _humanity = _humanity - SAR_surv_kill_value;
@@ -123,7 +123,7 @@ if(isPlayer _aikiller) then {
             _aikiller setVariable["humanKills",_humankills+1,true];        
         };
     };
-    if (_aikilled_group_side == SAR_AI_unfriendly_side) then {
+    if (_aikilled_side == SAR_AI_unfriendly_side) then {
         if(SAR_DEBUG)then{diag_log format["SAR_DEBUG: Adjusting humanity for bandit kill by %2 for %1",_aikiller,SAR_band_kill_value];};
         _humanity = _aikiller getVariable ["humanity",0];
         _humanity = _humanity + SAR_band_kill_value;

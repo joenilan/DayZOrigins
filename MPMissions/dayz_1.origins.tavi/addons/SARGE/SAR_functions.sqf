@@ -1,6 +1,6 @@
 // =========================================================================================================
 //  SAR_AI - DayZ AI library
-//  Version: 1.5.0 
+//  Version: 1.5.1 
 //  Author: Sarge (sarge@krumeich.ch) 
 //
 //		Wiki: to come
@@ -100,111 +100,6 @@ _area_name = _this select 0;
 
 };
 
-
-SAR_circle = {
-//
-// Parameters:
-//
-//              _leader = the leader of the group
-//              _action = the action to execute while forming a circle
-//
-//
-//
-   
-private ["_center","_defend","_veh","_angle","_dir","_newpos","_forEachIndex","_leader","_action","_grp","_leadername","_pos","_units","_count"];
-
-
-    _leader = _this select 0;
-    _action = _this select 1;
-
-    _grp = group _leader;
-    _defend = false;
-    
-    _leadername = _leader getVariable ["SAR_leader_name",false];
-
-    // suspend UPSMON
-    call compile format ["KRON_UPS_%1=2",_leadername];
-
-    _pos = getposASL _leader; 
-    //diag_log _pos;
-
-    _pos = (_leader) modelToWorld[0,0,0];
-    //diag_log _pos;
-    
-    if(_action == "defend") then {
-        _center = _leader;
-        _defend = true;
-    };
-    
-    if(_action == "campfire") then {
-        _veh = createvehicle["Land_Campfire_burning",_pos,[],0,"NONE"];
-        _center = _veh;
-    };
-    
-
-    _units = units _grp;
-    _count = count _units;
-    
-    if(_defend) then {
-        _angle = 360/(_count-1);
-    }else{
-        _angle = 360/(_count);
-    };
-    
-    SAR_circle_radius = 10;
-
-    {
-        if(_x != _leader || {_x == _leader && !_defend}) then { 
-            
-            _newpos = (_center modelToWorld [(sin (_forEachIndex * _angle))*SAR_circle_radius, (cos (_forEachIndex *_angle))*SAR_circle_radius, 0]);
-            
-//            diag_log format["Newpos %1: %2",_foreachindex,_newpos];    
-
-            _x moveTo _newpos;
-            _x doMove _newpos;
-            while{(_newpos distance (getpos _x)) > 1} do {}; 
-           
-            //_x doWatch (_veh modelToWorld [(sin (_foreachindex * _angle))*SAR_sit_radius, (cos (_foreachindex * _angle))*SAR_sit_radius, 0]);
-            //_x doWatch _veh;
-
-            if(_defend) then {
-                _dir = 0;
-            }else{
-                _dir = 180;
-            };
-        
-            _x setDir ((_foreachIndex * _angle)+ _dir); 
-
-            if(!_defend) then {
-                _x playActionNow "SitDown";
-                sleep 1;
-            };
-
-            _x disableAI "MOVE";
-            
-        };
-
-    } foreach _units;
-
-    // defend for 30 seconds
-    if(_defend) then {
-        sleep 30;
-    };
-    // wait for random campfire time
-    if(_action =="campfire") then {
-        sleep 60;
-        //cleanup campfire        
-        deletevehicle _veh;
-    };
-
-    {
-        _x enableAI "MOVE";
-    } foreach _units;
-    
-    // resume UPSMON
-    call compile format ["KRON_UPS_%1=1",_leadername];
-
-};
 
 SAR_break_circle = {
 //
@@ -427,77 +322,80 @@ SAR_circle_static = {
    
 private ["_center","_defend","_veh","_angle","_dir","_newpos","_forEachIndex","_leader","_action","_grp","_pos","_units","_count","_viewangle","_radius"];
 
+    _count = 0;
+    
+
   //  diag_log "SAR_AI: Group should form a circle";
 
     _leader = _this select 0;
     _action = _this select 1;
     _radius = _this select 2;
-
+    
     _grp = group _leader;
     _defend = false;
-    
-    _pos = getposASL _leader; 
-    //diag_log _pos;
-
-    _pos = (_leader) modelToWorld[0,0,0];
-    //diag_log _pos;
-    
-    
-    doStop _leader;
-    sleep .5;
-    
-    //play leader stop animation
-    _leader playAction "gestureFreeze";
-    sleep 2;
-    
-    
-    if(_action == "defend") then {
-        _center = _leader;
-        _leader forceSpeed 0;
-        _defend = true;
-    };
-    
-    if(_action == "campfire") then {
-        _veh = createvehicle["Land_Campfire_burning",_pos,[],0,"NONE"];
-        _center = _veh;
-    };
-
     _units = units _grp;
     _count = count _units;
-    
-    if(_defend) then {
-        _angle = 360/(_count-1);
-    }else{
-        _angle = 360/(_count);
-    };
-    
-    _grp enableGunLights true;
-    
-    _grp setBehaviour "CARELESS";
-    
-    {
-        if(_x != _leader || {_x == _leader && !_defend}) then { 
-            
-            _newpos = (_center modelToWorld [(sin (_forEachIndex * _angle))*_radius, (cos (_forEachIndex *_angle))*_radius, 0]);
-            
-//            diag_log format["Newpos %1: %2",_foreachindex,_newpos];    
 
-            if(_defend) then {
-                _dir = 0;
-            }else{
-                _dir = 180;
-            };
+    
+    if(_count > 1) then {      // only do this for groups > 1 unit
+    
+        _pos = getposASL _leader; 
 
-            _viewangle = (_foreachIndex * _angle) + _dir;
-            
-            [_x,_pos,_newpos,_viewangle,_defend]spawn SAR_move_to_circle_pos;
-
+        _pos = (_leader) modelToWorld[0,0,0];
+        
+        doStop _leader;
+        sleep .5;
+        
+        //play leader stop animation
+        _leader playAction "gestureFreeze";
+        sleep 2;
+        
+        
+        if(_action == "defend") then {
+            _center = _leader;
+            _leader forceSpeed 0;
+            _defend = true;
+        };
+        
+        if(_action == "campfire") then {
+            _veh = createvehicle["Land_Campfire_burning",_pos,[],0,"NONE"];
+            _center = _veh;
         };
 
-    } foreach _units;
+        
+        if(_defend) then {
+            _angle = 360/(_count-1);
+        }else{
+            _angle = 360/(_count);
+        };
+        
+        _grp enableGunLights true;
+        
+        _grp setBehaviour "CARELESS";
+        
+        {
+            if(_x != _leader || {_x == _leader && !_defend}) then { 
+                
+                _newpos = (_center modelToWorld [(sin (_forEachIndex * _angle))*_radius, (cos (_forEachIndex *_angle))*_radius, 0]);
+                
+    //            diag_log format["Newpos %1: %2",_foreachindex,_newpos];    
 
-    //_leader disableAI "MOVE";
+                if(_defend) then {
+                    _dir = 0;
+                }else{
+                    _dir = 180;
+                };
 
+                _viewangle = (_foreachIndex * _angle) + _dir;
+                
+                [_x,_pos,_newpos,_viewangle,_defend]spawn SAR_move_to_circle_pos;
+
+            };
+
+        } foreach _units;
+
+        //_leader disableAI "MOVE";
+    };
 };
 
 SAR_fnc_selectRandom = {
@@ -560,7 +458,7 @@ SAR_veh_side_debug = {
         
         switch (_side) do 
         {
-            case enemy:
+            case sideEnemy:
             {
                 _sphere_red = 1;
                 _sphere_green= 1;

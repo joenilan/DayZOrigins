@@ -72,7 +72,7 @@ if(isPlayer _aikiller) then {
         if(SAR_HITKILL_DEBUG && {isServer})then{diag_log format["SAR_HITKILL_DEBUG: Adjusting humanity for survivor hit by %2 for %1",_aikiller,(SAR_surv_kill_value/10)];};
         
         if((rating _aikiller > -10000) && {!isServer}) then { //check if shooter is not already marked as enemy
-            if(SAR_HITKILL_DEBUG && {isServer})then{diag_log format["SAR_HITKILL_DEBUG: Making Player %1 as an enemy for a friendly AI hit!",_aikiller];};
+            if(SAR_HITKILL_DEBUG && {isServer})then{diag_log format["SAR_HITKILL_DEBUG: Marking Player %1 as an enemy for a friendly AI hit!",_aikiller];};
             _aikiller addRating -10000;
         };
         group _ai reveal _aikiller;        

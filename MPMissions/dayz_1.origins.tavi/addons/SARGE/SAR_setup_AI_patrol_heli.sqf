@@ -1,6 +1,6 @@
 // =========================================================================================================
 //  SAR_AI - DayZ AI library
-//  Version: 1.5.0
+//  Version: 1.5.1
 //  Author: Sarge (sarge@krumeich.ch) 
 //
 //		Wiki: to come
@@ -22,6 +22,8 @@ private ["_ai_type","_riflemenlist","_side","_leader_group","_initstring","_patr
 if(!isServer) exitWith {};
 
 _argc = count _this;
+
+_error = false;
 
 _patrol_area_name = _this select 0;
 
