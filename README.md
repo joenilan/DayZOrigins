@@ -2,6 +2,7 @@ DayZ Origins community build
 ============================
 
 All credit goes to Cortez for all the hard work to make this mod available.
+Special thanks to .=QUACK=.Major.Pain for hit Github! https://github.com/MajorPainage/Origins
 
 <u><b>Tools Required</b></u>
 ============================
