@@ -25,7 +25,7 @@ SAR_dynamic_spawning = true;
 // enable or disable the AI debug monitor
 // -----------------------------------------------
 
-SAR_DEBUGMONITOR= true;
+SAR_DEBUGMONITOR= false;
 
 // -----------------------------------------------
 // default values for dynamic grid spawning
@@ -176,7 +176,7 @@ SAR_HITKILL_DEBUG = false;
 SAR_DEBUG = false;
 
 // careful with setting this, this shows a LOT, including the grid properties and definitions for every spawn and despawn event
-SAR_EXTREME_DEBUG = false;
+SAR_EXTREME_DEBUG = true;
 
 //
 // SET THIS TO 0 to hide the group markers on the map and see the UPSMON group debug messages
