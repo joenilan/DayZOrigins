@@ -67,8 +67,8 @@ if (!isDedicated) then {
 	
 	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
-	//_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
-	_playerMonitor = [] execFSM "admintools\player_monitor.fsm";
+	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
+	//_playerMonitor = [] execFSM "admintools\player_monitor.fsm";
 	//_nul = [] execVM "Camera\loginCamera.sqf";
 
 	//Remove the double slashes on the line below to enable auto refuelling
@@ -89,4 +89,4 @@ if (!isDedicated) then {
     };
 	null = [] execVM "earthquake.sqf";
 	_fast_roping = [] execVM "=BTC=_fast_roping\=BTC=_fast_roping_init.sqf";
-	[] execVM "admintools\Activate.sqf";
+	//[] execVM "admintools\Activate.sqf";

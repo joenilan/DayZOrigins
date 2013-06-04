@@ -25,7 +25,7 @@ SAR_dynamic_spawning = true;
 // enable or disable the AI debug monitor
 // -----------------------------------------------
 
-SAR_DEBUGMONITOR= false;
+SAR_DEBUGMONITOR= true;
 
 // -----------------------------------------------
 // default values for dynamic grid spawning
@@ -42,9 +42,9 @@ SAR_chance_soldiers = 100;
 SAR_chance_survivors = 100;
 
 // maximum size of group (including Leader)
-SAR_max_grpsize_bandits = 1;
-SAR_max_grpsize_soldiers = 1;
-SAR_max_grpsize_survivors = 2;
+SAR_max_grpsize_bandits = 5;
+SAR_max_grpsize_soldiers = 8;
+SAR_max_grpsize_survivors = 5;
 
 
 // -----------------------------------------------
@@ -70,7 +70,7 @@ SAR_AI_STEAL_VEHICLE = false;
 SAR_surv_kill_value = 250;
 
 // Humanity Value that gets ADDED for a bandit AI kill
-SAR_band_kill_value = 70;
+SAR_band_kill_value = 50;
 
 // the humanity value below which a player will be considered hostile
 SAR_HUMANITY_HOSTILE_LIMIT = -2500;
@@ -144,17 +144,17 @@ SAR_respawn_waittime = 90; // default 30 seconds
 SAR_DESPAWN_TIMEOUT = 120; // 2 minutes
 
 // time after which dead AI bodies are deleted 
-SAR_DELETE_TIMEOUT = 600; // 10 minutes
+SAR_DELETE_TIMEOUT = 120; // 2 minutes
 
 // -----------------------------------------------
 // System performance 
 // -----------------------------------------------
 
 // the max range in meters within AI is detecting Zombies and player bandits and makes them hostile - the bigger this value, the more CPU needed
-SAR_DETECT_HOSTILE = 250;
+SAR_DETECT_HOSTILE = 225;
 
 // the max range in meters within AI is detecting player bandits from a vehicle, e.g. heli or land vehicle and makes them hostile - the bigger this value, the more CPU needed
-SAR_DETECT_HOSTILE_FROM_VEHICLE = 300;
+SAR_DETECT_HOSTILE_FROM_VEHICLE = 350;
 
 // the interval in seconds that an AI scans for new hostiles. The lower this value, the more accurate, but your server will see an impact. Recommended value: 15 
 SAR_DETECT_INTERVAL = 20;
@@ -443,7 +443,7 @@ SAR_sniper_surv_skills = [
 // military
 
 // potential weapon list for leaders
-SAR_sold_leader_weapon_list = ["M4A1","M4A3_CCO_EP1","AK_47_M"];
+SAR_sold_leader_weapon_list = ["M4A1","M4A3_CCO_EP1","AK_47_M","DMR"];
 SAR_sold_leader_pistol_list = [];   
 
 // potential item list for leaders -> Item / Chance 1 - 100
@@ -471,7 +471,7 @@ SAR_sold_sniper_tools = [["ItemMap",50],["ItemCompass",30]];
 //
 
 // potential weapon list for leaders
-SAR_surv_leader_weapon_list = ["M4A1","M4A3_CCO_EP1","AK_47_M"];
+SAR_surv_leader_weapon_list = ["M4A1","M4A3_CCO_EP1","AK_47_M","DMR"];
 SAR_surv_leader_pistol_list = [];   
 
 // potential item list for leaders -> Item / Chance 1 - 100
@@ -528,5 +528,5 @@ SAR_band_sniper_tools = [["ItemMap",50],["ItemCompass",30],["Binocular_Vector",1
 // ---------------------------------------------------------------------------------------------------------------------
 
 // define the type of heli(s) you want to use here for the heli patrols - make sure you include helis that have minimum 2 gunner positions, anything else might fail
+//SAR_heli_type=["UH1H_DZ","Mi17_DZ"];
 SAR_heli_type=["UH1H_DZ","Mi17_DZ","MV22"];
-//SAR_heli_type=["UH1H_DZ"];

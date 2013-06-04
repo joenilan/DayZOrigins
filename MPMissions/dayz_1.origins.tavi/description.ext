@@ -18,7 +18,7 @@ class Header
 aiKills = 1;
 diagRadio = 1;
 diagHit = 1;
-#include "R3F_ARTY_AND_LOG\desc_include.h"
+#include "=BTC=_Logistic\=BTC=_Lift\=BTC=_Hud.h"
 
 class RscText
 {
