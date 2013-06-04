@@ -88,6 +88,8 @@ Heli Crash Animations<br/>
 ============================
 Script Restriction #20 Enabling Battleye<br/>
 Possible AI Lag<br/>
-House loot disappears, bug has something to do with lag when choosing to unlock house twice.<br/><br/>
+House loot disappears, bug has something to do with lag when choosing to unlock house twice.<br/>
+Death Graves don't work (Uses bodies instead)<br/>
+Logout Animation<br/><br/>
 
 (NOTE:  Folders inside the \MPMissions\ folder don't have to be packed to .pbo format)
