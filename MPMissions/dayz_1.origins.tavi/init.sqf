@@ -87,6 +87,4 @@ if (!isDedicated) then {
  if (!isDedicated) then {
     [] execVM "fixes\effects.sqf";
     };
-	null = [] execVM "earthquake.sqf";
 	_fast_roping = [] execVM "=BTC=_fast_roping\=BTC=_fast_roping_init.sqf";
-	//[] execVM "admintools\Activate.sqf";
