@@ -1,6 +1,6 @@
 // =========================================================================================================
 //  SAR_AI - DayZ AI library
-//  Version: 1.5.1 
+//  Version: 1.5.2 
 //  Author: Sarge (sarge@krumeich.ch) 
 //
 //		Wiki: to come
@@ -851,8 +851,8 @@ SAR_unit_loadout_items = {
 };
 SAR_unit_loadout_weapons = {
 // Parameters:
-// _unittype (leader, soldier, sniper)
-// _side (mili,surv,band)
+// _unittype (leader, rifleman, sniper)
+// _side (sold,surv,band)
 // return value: weapons array 
 //
 
@@ -865,8 +865,15 @@ SAR_unit_loadout_weapons = {
     _unit_pistol_list = call compile format["SAR_%2_%1_pistol_list",_unittype,_side];
     
     _unit_weapon_names = [];
-    _unit_weapon_name = _unit_weapon_list select (floor(random (count _unit_weapon_list)));
-    _unit_pistol_name = _unit_pistol_list select (floor(random (count _unit_pistol_list)));
+    _unit_weapon_name = "";
+    _unit_pistol_name = "";
+    
+    if(count _unit_weapon_list > 0) then {
+        _unit_weapon_name = _unit_weapon_list select (floor(random (count _unit_weapon_list)));
+    };
+    if(count _unit_pistol_list > 0) then {
+        _unit_pistol_name = _unit_pistol_list select (floor(random (count _unit_pistol_list)));
+    };
     _unit_weapon_names set [0, _unit_weapon_name];
     _unit_weapon_names set [1, _unit_pistol_name];
 

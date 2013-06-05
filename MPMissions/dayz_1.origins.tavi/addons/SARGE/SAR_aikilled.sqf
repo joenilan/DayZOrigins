@@ -1,6 +1,6 @@
 // =========================================================================================================
 //  SAR_AI - DayZ AI library
-//  Version: 1.5.1 
+//  Version: 1.5.2 
 //  Author: Sarge (sarge@krumeich.ch) 
 //
 //		Wiki: to come
@@ -106,14 +106,14 @@ if (SAR_KILL_MSG) then {
 
 
 if (SAR_HITKILL_DEBUG) then {
-    diag_log format["SAR_HITKILL_DEBUG: AI killed - Type: %1 Side: %3 Group Side: %4",_aikilled_type, _aikilled_side,_aikilled_group_side];
+    diag_log format["SAR_HITKILL_DEBUG: AI killed - Type: %1 Side: %2 Group Side: %3",_aikilled_type, _aikilled_side,_aikilled_group_side];
     diag_log format["SAR_HITKILL_DEBUG: AI Killer - Type: %1 Name: %2 Side: %3 Group Side: %4",_aikiller_type,_aikiller_name, _aikiller_side,_aikiller_group_side];
 };
 
 
 if(isPlayer _aikiller) then {
     
-    if (_aikilled_side == SAR_AI_friendly_side) then {
+    if (_aikilled_group_side == SAR_AI_friendly_side) then {
         if(SAR_DEBUG)then{diag_log format["SAR_DEBUG: Adjusting humanity for survivor or soldier kill by %2 for %1",_aikiller,SAR_surv_kill_value];};
         _humanity = _aikiller getVariable ["humanity",0];
         _humanity = _humanity - SAR_surv_kill_value;
@@ -122,8 +122,22 @@ if(isPlayer _aikiller) then {
             _humankills = _aikiller getVariable["humanKills",0];
             _aikiller setVariable["humanKills",_humankills+1,true];        
         };
+        if ((random 100) < 3) then {
+            _message = format["%1 killed a friendly AI - sending reinforcements!",_aikiller_name];
+            [nil, nil, rspawn, [[West,"airbase"], _message], { (_this select 0) sideChat (_this select 1) }] call RE;
+        } else {
+            if ((random 100) < 3) then {
+                _message = format["Tango down ... we offer a decent reward for the head of %1!",_aikiller_name];
+                [nil, nil, rspawn, [[West,"airbase"], _message], { (_this select 0) sideChat (_this select 1) }] call RE;
+            };
+        };
+        if ((random 100) < 2) then {
+            _message = "NO CAPS in sidechat !!!";
+            [nil, nil, rspawn, [[West,"airbase"], _message], { (_this select 0) sideChat (_this select 1) }] call RE;
+        };
+
     };
-    if (_aikilled_side == SAR_AI_unfriendly_side) then {
+    if (_aikilled_group_side == SAR_AI_unfriendly_side) then {
         if(SAR_DEBUG)then{diag_log format["SAR_DEBUG: Adjusting humanity for bandit kill by %2 for %1",_aikiller,SAR_band_kill_value];};
         _humanity = _aikiller getVariable ["humanity",0];
         _humanity = _humanity + SAR_band_kill_value;
@@ -133,21 +147,19 @@ if(isPlayer _aikiller) then {
             _aikiller setVariable["banditKills",_banditkills+1,true];        
         };
         
-        if ((random 100) < 5) then {
+        if ((random 100) < 3) then {
             _message = format["nice bandit kill %1!",_aikiller_name];
             [nil, nil, rspawn, [[West,"airbase"], _message], { (_this select 0) sideChat (_this select 1) }] call RE;
         } else {
-            if ((random 100) < 5) then {
-                _message = format["another bandit down ... %1 is going to be the root cause of extinction :-)",_aikiller_name];
+            if ((random 100) < 3) then {
+                _message = format["another bandit down ... %1 is going to be the root cause of bandit extinction :-)",_aikiller_name];
                 [nil, nil, rspawn, [[West,"airbase"], _message], { (_this select 0) sideChat (_this select 1) }] call RE;
             };
         };
-        if ((random 100) < 5) then {
+        if ((random 100) < 2) then {
             _message = "SRY CAPS ...";
             [nil, nil, rspawn, [[West,"airbase"], _message], { (_this select 0) sideChat (_this select 1) }] call RE;
-        } else {
-        
-
+        };
         
     };
 

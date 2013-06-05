@@ -1,6 +1,6 @@
 // =========================================================================================================
 //  SAR_AI - DayZ AI library
-//  Version: 1.5.1
+//  Version: 1.5.2
 //  Author: Sarge (sarge@krumeich.ch) 
 //
 //		Wiki: to come
@@ -17,7 +17,7 @@
 // ---------------------------------------------------------------------------------------------------------
 
 
-private ["_ai_type","_riflemenlist","_side","_leader_group","_initstring","_patrol_area_name","_rndpos","_groupheli","_heli","_leader","_man2heli","_man3heli","_argc","_grouptype","_respawn","_leader_weapon_names","_leader_items","_leader_tools","_soldier_weapon_names","_soldier_items","_soldier_tools","_leaderskills","_sniperskills","_ups_para_list","_type","_sniperlist","_riflemanskills","_sniper_weapon_names","_sniper_items","_sniper_tools","_error","_respawn_time"];
+private ["_ai_type","_riflemenlist","_side","_leader_group","_initstring","_patrol_area_name","_rndpos","_groupheli","_heli","_leader","_man2heli","_man3heli","_argc","_grouptype","_respawn","_leader_weapon_names","_leader_items","_leader_tools","_soldier_weapon_names","_soldier_items","_soldier_tools","_leaderskills","_sniperskills","_ups_para_list","_type","_error","_respawn_time","_leadername"];
 
 if(!isServer) exitWith {};
 
@@ -63,20 +63,14 @@ if (_argc >1) then {
 
     _leader_group = call compile format ["SAR_leader_%1_list",_type] call SAR_fnc_selectRandom;
     _riflemenlist = call compile format ["SAR_soldier_%1_list",_type];
-    _sniperlist = call compile format ["SAR_sniper_%1_list",_type];
 
     _leaderskills = call compile format ["SAR_leader_%1_skills",_type];
-    _riflemanskills = call compile format ["SAR_soldier_%1_skills",_type];
+
     _sniperskills = call compile format ["SAR_sniper_%1_skills",_type];
 
     _leader_weapon_names = ["leader",_type] call SAR_unit_loadout_weapons;
     _leader_items = ["leader",_type] call SAR_unit_loadout_items;
     _leader_tools = ["leader",_type] call SAR_unit_loadout_tools;
-
-
-    _sniper_weapon_names = ["sniper",_type] call SAR_unit_loadout_weapons;
-    _sniper_items = ["sniper",_type] call SAR_unit_loadout_items;
-    _sniper_tools = ["sniper",_type] call SAR_unit_loadout_tools;
     
 } else {
     _error = true;
@@ -205,11 +199,16 @@ _leadername = format["SAR_leader_%1",SAR_leader_number];
 _leader setVehicleVarname _leadername;
 _leader setVariable ["SAR_leader_name",_leadername,false];
 
+// create global variable for this group
+call compile format ["KRON_UPS_%1=1",_leadername];
+
 // store AI type on the AI
 _leader setVariable ["SAR_AI_type",_ai_type + " Leader",false];
 
 // store experience value on AI
 _leader setVariable ["SAR_AI_experience",0,false];
+
+
 
 // set behaviour & speedmode
 _leader setspeedmode "FULL";

@@ -1,6 +1,6 @@
 // =========================================================================================================
 //  SAR_AI - DayZ AI library
-//  Version: 1.5.0 
+//  Version: 1.5.2 
 //  Author: Sarge (sarge@krumeich.ch) 
 //
 //		Wiki: to come
@@ -34,7 +34,7 @@ SAR_DEBUGMONITOR= false;
 // maximum number of groups / grid
 SAR_max_grps_bandits = 2;
 SAR_max_grps_soldiers = 2;
-SAR_max_grps_survivors = 2;
+SAR_max_grps_survivors = 3;
 
 // chance for a group to spawn (1-100)
 SAR_chance_bandits = 100;
@@ -43,7 +43,7 @@ SAR_chance_survivors = 100;
 
 // maximum size of group (including Leader)
 SAR_max_grpsize_bandits = 5;
-SAR_max_grpsize_soldiers = 8;
+SAR_max_grpsize_soldiers = 7;
 SAR_max_grpsize_survivors = 5;
 
 
@@ -73,7 +73,7 @@ SAR_surv_kill_value = 250;
 SAR_band_kill_value = 50;
 
 // the humanity value below which a player will be considered hostile
-SAR_HUMANITY_HOSTILE_LIMIT = -2500;
+SAR_HUMANITY_HOSTILE_LIMIT = 2500;
 
 // -----------------------------------------------
 // Track and show AI kills in the debug monitor of the player 
@@ -151,16 +151,16 @@ SAR_DELETE_TIMEOUT = 120; // 2 minutes
 // -----------------------------------------------
 
 // the max range in meters within AI is detecting Zombies and player bandits and makes them hostile - the bigger this value, the more CPU needed
-SAR_DETECT_HOSTILE = 225;
+SAR_DETECT_HOSTILE = 200;
 
 // the max range in meters within AI is detecting player bandits from a vehicle, e.g. heli or land vehicle and makes them hostile - the bigger this value, the more CPU needed
-SAR_DETECT_HOSTILE_FROM_VEHICLE = 350;
+SAR_DETECT_HOSTILE_FROM_VEHICLE = 500;
 
 // the interval in seconds that an AI scans for new hostiles. The lower this value, the more accurate, but your server will see an impact. Recommended value: 15 
-SAR_DETECT_INTERVAL = 20;
+SAR_DETECT_INTERVAL = 15;
 
 // the interval in seconds that an AI scans for new hostiles from WITHIN a vehicle. The lower this value, the more accurate, but your server will see an impact. Recommended value: 5 
-SAR_DETECT_FROM_VEHICLE_INTERVAL = 10;
+SAR_DETECT_FROM_VEHICLE_INTERVAL = 5;
 
 // the interval in seconds after that AI and AI in vehicles get new ammo and new fuel if needed
 SAR_REAMMO_INTERVAL = 30;
@@ -173,7 +173,7 @@ SAR_REAMMO_INTERVAL = 30;
 SAR_HITKILL_DEBUG = false;
 
 // Shows extra debug info in .rpt
-SAR_DEBUG = false;
+SAR_DEBUG = true;
 
 // careful with setting this, this shows a LOT, including the grid properties and definitions for every spawn and despawn event
 SAR_EXTREME_DEBUG = true;
@@ -181,7 +181,13 @@ SAR_EXTREME_DEBUG = true;
 //
 // SET THIS TO 0 to hide the group markers on the map and see the UPSMON group debug messages
 // Possible values: 1 = enabled, 0 = disabled
-KRON_UPS_Debug = 0;
+KRON_UPS_Debug = 1;
+
+//
+// SET THIS TO 1 to see waypoints and pathfinding information in your rpt
+// Possible values: 1 = enabled, 0 = disabled
+
+KRON_UPS_WP_Debug = 1;
 
 //
 // SET THIS TO 1 to enable AI debugging in the rpt. You will be able to debug targets / enemy handling
@@ -459,7 +465,7 @@ SAR_sold_rifleman_items = [["ItemSodaCoke",75],["FoodCanBakedBeans",60]];
 SAR_sold_rifleman_tools = [["ItemMap",50],["ItemCompass",30]];
 
 //potential weapon list for snipers
-SAR_sold_sniper_weapon_list = ["M4A1_Aim","SVD_CAMO","Huntingrifle"];
+SAR_sold_sniper_weapon_list = ["M4A1_Aim","SVD_CAMO","Huntingrifle","DMR"];
 SAR_sold_sniper_pistol_list = [];   
 
 // potential item list for snipers

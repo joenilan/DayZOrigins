@@ -350,7 +350,7 @@ KRON_UPS_ARTILLERY_GUER_FIRE = false; //set to true for doing resistance to fire
 				_targets1 = [];
 				_targets2 = [];
 				{
-					if (!isnull _x && alive _x && !captive _x ) then {	
+					if (_foreachindex > 0 && {!isnull _x} && {alive _x} && {!captive _x} ) then {	
 						_npc = _x;								
 						_targets = [];
 

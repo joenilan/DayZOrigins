@@ -1,6 +1,6 @@
 // =========================================================================================================
 //  SAR_AI - DayZ AI library
-//  Version: 1.5.0
+//  Version: 1.5.2
 //  Author: Sarge (sarge@krumeich.ch) 
 //
 //		Wiki: to come
@@ -188,11 +188,14 @@ _groupvehicles setVariable ["SAR_protect",true,true];
         _leader setVehicleVarname _leadername;
         _leader setVariable ["SAR_leader_name",_leadername,false];
         
+        // create global variable for this group
+        call compile format ["KRON_UPS_%1=1",_leadername];
+
+        
         // set behaviour & speedmode
         _leader setspeedmode "FULL";
         _leader setBehaviour "SAFE"; 
-        
-        call compile format ["KRON_UPS_%1=1",_leadername];
+
     }; 
     
     // add crew to the vehicle

@@ -77,7 +77,7 @@
 // numbers of Civilians killed by players could be read from the array 'KILLED_CIV_COUNTER' -> [Total, by West, by East, by Res, The Killer]
 
 
-private ["_vehiclecrews","_crew_units","_is_veh_group","_circledefend","_relTX","_relTY","_relUX","_relUY","_waiting","_pursue","_react","_newpos","_currPos","_orgPos","_targetPos","_attackPos","_flankPos","_avoidPos","_speedmode","_dist","_lastdist","_lastmove1","_lastmove2","_gothit","_supressed","_flankdist","_nBuilding","_nBuildingt","_distnbuid","_distnbuidt","_objsflankPos1","_cntobjs1","_objsflankPos2","_cntobjs2","_targettext","_dir1","_dir2","_dir3","_dd","_timeontarget","_dirf1","_dirf2","_fightmode","_flankPos2","_reinforcement","_reinforcementsent","_target","_targets","_flankdir","_prov","_lastpos","_newtarget","_planta","_nomove","_newflankAngle","_sharedist","_fldest","_grpidx","_grpid","_i","_unitpos","_Behaviour","_incar","_inheli","_inboat","_gunner","_driver","_vehicle","_minreact","_lastreact","_rnd","_GetOutDist","_GetOut","_GetIn_NearestVehicles","_makenewtarget","_index","_wp","_grp","_wptype","_wpformation","_targetdead","_frontPos","_GetIn","_dist1","_dist2","_dist3","_fldestfront","_fldest2","_bld","_flyInHeight","_fortify","_buildingdist","_rfid","_rfidcalled","_Mines","_enemytanks","_enemytanksnear","_friendlytanksnear","_mineposition","_enemytanknear","_roads","_timeout","_lastcurrpos","_wait","_countfriends","_side","_SURRENDER","_spawned","_nowp","_unitsIn","_ambush","_ambushed","_ambushdist","_friendside","_enemyside","_newattackPos","_fixedtargetpos","_NearestEnemy","_targetdist","_cargo","_targetsnear","_landing","_ambushwait","_membertypes","_respawn","_respawnmax","_lead","_safemode","_vehicles","_lastwptype","_template","_unittype","_initstr","_fortifyorig","_nowpType","_ambushtype","_vehicletypes","_onroad","_loop2","_tries2","_targetPosTemp","_sokilled","_sowounded","_nosmoke","_newunit","_rlastpos","_rcurrpos","_jumpers","_isSoldier","_noveh","_deadBodiesReact","_e","_npc","_exit","_sharedenemy","_friendlytanks","_closeenough","_initpos","_orgMode","_orgSpeed","_try","_posinfo","_bldpos","_track","_trackername","_markerobj","_markertype","_markercolor","_destname","_surrended","_lastknown","_opfknowval","_currcycle","_groupOne","_pause","_speed","_fm","_rstuckControl","_tries","_centerpos","_centerX","_centerY","_areasize","_rangeX","_rangeY","_areadir","_a","_dp","_drydist","_swimming","_loop","_cont","_currX","_currY","_npcname","_allow_respawn","_grouptype","_unit_weapon_names","_unit_items","_unit_tools","_grps_upd","_check","_valuearray","_grps_band","_grps_sold","_grps_surv","_foreachIndex","_UCthis","_group","_leader","_leader_weapon_names","_leader_items","_leader_tools","_cond","_leadername","_gridspawn","_obj","_grpname","_areamarker","_showmarker","_members","_isman","_iscar","_isboat","_isplane","_friends","_enemies","_area","_cosdir","_sindir","_mindist","_orgDir","_orgWatch","_maxmove","_moved","_damm","_dammchg","_lastdamm","_hitPos","_sin0","_sin90","_cos90","_sin270","_cos270","_fortify2","_nofollow","_shareinfo","_areatrigger","_cycle","_noslow","_deletedead","_respawntime","_type","_unit_skills","_leaderskills","_ai_type","_timeonwaypoint","_circle_up","_veh","_tmp_cargo_units","_tmp_count_units","_tmp_vehicle_number","_tmp_veh_units"];
+private ["_loadouttype","_vehiclecrews","_crew_units","_is_veh_group","_circledefend","_relTX","_relTY","_relUX","_relUY","_waiting","_pursue","_react","_newpos","_currPos","_orgPos","_targetPos","_attackPos","_flankPos","_avoidPos","_speedmode","_dist","_lastdist","_lastmove1","_lastmove2","_gothit","_supressed","_flankdist","_nBuilding","_nBuildingt","_distnbuid","_distnbuidt","_objsflankPos1","_cntobjs1","_objsflankPos2","_cntobjs2","_targettext","_dir1","_dir2","_dir3","_dd","_timeontarget","_dirf1","_dirf2","_fightmode","_flankPos2","_reinforcement","_reinforcementsent","_target","_targets","_flankdir","_prov","_lastpos","_newtarget","_planta","_nomove","_newflankAngle","_sharedist","_fldest","_grpidx","_grpid","_i","_unitpos","_Behaviour","_incar","_inheli","_inboat","_gunner","_driver","_vehicle","_minreact","_lastreact","_rnd","_GetOutDist","_GetOut","_GetIn_NearestVehicles","_makenewtarget","_index","_wp","_grp","_wptype","_wpformation","_targetdead","_frontPos","_GetIn","_dist1","_dist2","_dist3","_fldestfront","_fldest2","_bld","_flyInHeight","_fortify","_buildingdist","_rfid","_rfidcalled","_Mines","_enemytanks","_enemytanksnear","_friendlytanksnear","_mineposition","_enemytanknear","_roads","_timeout","_lastcurrpos","_wait","_countfriends","_side","_SURRENDER","_spawned","_nowp","_unitsIn","_ambush","_ambushed","_ambushdist","_friendside","_enemyside","_newattackPos","_fixedtargetpos","_NearestEnemy","_targetdist","_cargo","_targetsnear","_landing","_ambushwait","_membertypes","_respawn","_respawnmax","_lead","_safemode","_vehicles","_lastwptype","_template","_unittype","_initstr","_fortifyorig","_nowpType","_ambushtype","_vehicletypes","_onroad","_loop2","_tries2","_targetPosTemp","_sokilled","_sowounded","_nosmoke","_newunit","_rlastpos","_rcurrpos","_jumpers","_isSoldier","_noveh","_deadBodiesReact","_e","_npc","_exit","_sharedenemy","_friendlytanks","_closeenough","_initpos","_orgMode","_orgSpeed","_try","_posinfo","_bldpos","_track","_trackername","_markerobj","_markertype","_markercolor","_destname","_surrended","_lastknown","_opfknowval","_currcycle","_groupOne","_pause","_speed","_fm","_rstuckControl","_tries","_centerpos","_centerX","_centerY","_areasize","_rangeX","_rangeY","_areadir","_a","_dp","_drydist","_swimming","_loop","_cont","_currX","_currY","_npcname","_allow_respawn","_grouptype","_unit_weapon_names","_unit_items","_unit_tools","_grps_upd","_check","_valuearray","_grps_band","_grps_sold","_grps_surv","_foreachIndex","_UCthis","_group","_leader","_leader_weapon_names","_leader_items","_leader_tools","_cond","_leadername","_gridspawn","_obj","_grpname","_areamarker","_showmarker","_members","_isman","_iscar","_isboat","_isplane","_friends","_enemies","_area","_cosdir","_sindir","_mindist","_orgDir","_orgWatch","_maxmove","_moved","_damm","_dammchg","_lastdamm","_hitPos","_sin0","_sin90","_cos90","_sin270","_cos270","_fortify2","_nofollow","_shareinfo","_areatrigger","_cycle","_noslow","_deletedead","_respawntime","_type","_unit_skills","_leaderskills","_ai_type","_timeonwaypoint","_circle_up","_veh","_tmp_cargo_units","_tmp_count_units","_tmp_vehicle_number","_tmp_veh_units"];
 
 //_ups_init_start_time = diag_tickTime;
 
@@ -487,6 +487,7 @@ _timeontarget = 0;
 
 _timeonwaypoint = 0;
 _circle_up = false;
+_respawntime = 0;
 
 _fightmode = "walk";
 _fm=0;
@@ -822,7 +823,7 @@ if ( _nomove=="NOMOVE" && !_circledefend ) then {
      _unitsIn = [_grpid,_npc,150] call MON_GetIn_NearestStatic;		
     if ( count _unitsIn > 0 ) then { sleep 10};
     [_npc, _buildingdist,false,_wait,true] spawn MON_moveNearestBuildings;
-    if (KRON_UPS_Debug>0) then {diag_log format["KRON_UPS_Debug: Group %1: movetonearestbuilding",_grpid]};		
+    if (KRON_UPS_WP_Debug>0) then {diag_log format["KRON_UPS_WP_Debug: Group %1: movetonearestbuilding",_grpid]};		
 };	
 
 // init done
@@ -1407,7 +1408,7 @@ while {_loop} do {
 		
 		if (_pursue) then {		
 		
-			if (KRON_UPS_Debug>0) then {diag_log format["KRON_UPS_Debug:  Group %1: is in pursuit",_grpidx]}; 
+			if (KRON_UPS_AI_Debug>0) then {diag_log format["KRON_UPS_AI_Debug:  Group %1: is in pursuit",_grpidx]}; 
 		
 			_pursue = false;
 			_newpos = true; 	
@@ -1479,7 +1480,7 @@ while {_loop} do {
 			_i = 0;
 			
 			{			
-				if (_i != _grpid &&  format ["%1", _x] != "[0,0]" && _foreachindex !=0) then {
+				if (_foreachindex !=0 && {_i != _grpid} &&  {format ["%1", _x] != "[0,0]"}) then {
 					_dist1 = [_x,_flankPos] call KRON_distancePosSqr;
 					_dist2 = [_x,_flankPos2] call KRON_distancePosSqr;	
 					_dist3 = [_x,_frontPos] call KRON_distancePosSqr;	
@@ -1499,7 +1500,7 @@ while {_loop} do {
 			//We have the positions of other groups more distant
 			_i = 0;
 			{			
-				if (_i != _grpid && !isnull(_x)) then {
+				if (_foreachindex > 0 && {_i != _grpid} && {!(isnull _x)})  then {
 					_dist1 = [getpos(_x),_flankPos] call KRON_distancePosSqr;
 					_dist2 = [getpos(_x),_flankPos2] call KRON_distancePosSqr;	
 					_dist3 = [getpos(_x),_frontPos] call KRON_distancePosSqr;
@@ -1809,7 +1810,7 @@ while {_loop} do {
 //		if (!_nowp && {alive _npc} && {canmove _npc} && {_wptype == "MOVE"} && {_timeontarget >= 60}) then {
 			[_npc] call MON_cancelstop;	
 			_makenewtarget = true;
-			if (KRON_UPS_Debug>0) then {diag_log format["KRON_UPS_DEBUG: Group %1 (%2) is stuck, moving. Reason: _timeontarget = %3, _lastcurrpos select 0 == _currpos select 0: %4, _lastcurrpos select 1 == _currpos select 1: %5, _lastcurrpos = %6, _currpos = %7",_grpidx,_npc,_timeontarget,(_lastcurrpos select 0 == _currpos select 0),(_lastcurrpos select 1 == _currpos select 1),_lastcurrpos,_currpos]};	
+			if (KRON_UPS_WP_Debug>0) then {diag_log format["KRON_UPS_WP_DEBUG: Group %1 (%2) is stuck, moving. Reason: _timeontarget = %3, _lastcurrpos select 0 == _currpos select 0: %4, _lastcurrpos select 1 == _currpos select 1: %5, _lastcurrpos = %6, _currpos = %7",_grpidx,_npc,_timeontarget,(_lastcurrpos select 0 == _currpos select 0),(_lastcurrpos select 1 == _currpos select 1),_lastcurrpos,_currpos]};	
 		};
 		
 		_lastpos = _targetPos;
@@ -1889,9 +1890,9 @@ while {_loop} do {
             
 			if (!_nowp && {(!_gothit)} && {(!_swimming)} && {(_fightmode == "walk")} && {(( _targetdist <= (_area/4) || moveToFailed _npc) && (_timeonwaypoint >= KRON_UPS_wp_maxwaiting))}) then {
             
-                if (KRON_UPS_Debug>0) then {diag_log format["KRON_UPS_Debug: Group %1 is getting a new waypoint!",_grpidx]};
+                if (KRON_UPS_WP_Debug>0) then {diag_log format["KRON_UPS_WP_Debug: Group %1 is getting a new waypoint!",_grpidx]};
 
-                if (KRON_UPS_Debug>0) then {diag_log format["KRON_UPS_Debug: reason: _targetdist < area/4: %1, _timeontarget condition: %2, _timeontarget: %3, _timeonwaypoint: %4",( _targetdist <= (_area/4) || moveToFailed _npc),_timeontarget > KRON_UPS_maxwaiting,_timeontarget,_timeonwaypoint]};
+                if (KRON_UPS_WP_Debug>0) then {diag_log format["KRON_UPS_WP_Debug: reason: _targetdist < area/4: %1, _timeontarget condition: %2, _timeontarget: %3, _timeonwaypoint: %4",( _targetdist <= (_area/4) || moveToFailed _npc),_timeontarget > KRON_UPS_maxwaiting,_timeontarget,_timeonwaypoint]};
                 
 				_makenewtarget=true;
 				_unitpos = "AUTO";
@@ -1900,11 +1901,11 @@ while {_loop} do {
 			} else { // no new waypoint made, debug check conditions why not
             
             
-                if (KRON_UPS_Debug>0) then {diag_log format["KRON_UPS_Debug: Group %6 did NOT get a new waypoint. Potential reason: _fightmode = %1, _timeontarget = %2,_targetdist = %3, _area/4 = %4, _timeonwaypoint = %5",_fightmode,_timeontarget,_targetdist,_area/4,_timeonwaypoint,_grpidx]};
+                if (KRON_UPS_WP_Debug>0) then {diag_log format["KRON_UPS_WP_Debug: Group %6 did NOT get a new waypoint. Potential reason: _fightmode = %1, _timeontarget = %2,_targetdist = %3, _area/4 = %4, _timeonwaypoint = %5",_fightmode,_timeontarget,_targetdist,_area/4,_timeonwaypoint,_grpidx]};
                 
                 if(_fightmode == "fight" && _circle_up) then {
                     [group _npc] call SAR_break_circle;
-                    if (KRON_UPS_Debug>0) then {diag_log format["KRON_UPS_Debug: Group %1 did break out of a circle condition.",_grpidx]};
+                    if (KRON_UPS_WP_Debug>0) then {diag_log format["KRON_UPS_WP_Debug: Group %1 did break out of a circle condition.",_grpidx]};
                 };
             
             };
@@ -1931,7 +1932,7 @@ while {_loop} do {
 				} else {				
 					
 					if ((_nomove=="NOMOVE") && {(_timeontarget>KRON_UPS_alerttime)}) then {
-                        if (KRON_UPS_Debug>0) then {diag_log format["nomove: %1",_nomove]};	
+                        if (KRON_UPS_WP_Debug>0) then {diag_log format["nomove: %1",_nomove]};	
 						if (([_currPos,_orgPos] call KRON_distancePosSqr)<_closeenough) then {
 							_newpos = false;
 							_wptype = "HOLD";
@@ -1950,7 +1951,7 @@ while {_loop} do {
 						_rcurrPos = getpos _npc;
 						if (_rlastPos select 0 == _rcurrPos select 0 && {_rlastPos select 1 == _rcurrPos select 1}) then {
 							
-							if (KRON_UPS_Debug>0) then {diag_log format["KRON_UPS_DEBUG: %1 !RstuckControl try to move",_grpidx]};						
+							if (KRON_UPS_WP_Debug>0) then {diag_log format["KRON_UPS_WP_DEBUG: %1 !RstuckControl try to move",_grpidx]};						
 							if (vehicle _npc != _npc) then {
                                 _rstuckControl = _rstuckControl + 1;
 								if (_rstuckControl > 1) then {
@@ -2039,7 +2040,7 @@ while {_loop} do {
                                             
                                             if(([_currPos,_targetPos] call KRON_distancePosSqr) > _mindist) then {
                                                 _loop2 = TRUE;
-                                                if (KRON_UPS_Debug>0) then {diag_log format["KRON_UPS_Debug: Group %1 - land vehicle group - just got a new onroad waypoint: %2, after %3 tries",_grpidx,_targetPos,_tries2]};	
+                                                if (KRON_UPS_WP_Debug>0) then {diag_log format["KRON_UPS_WP_Debug: Group %1 - land vehicle group - just got a new onroad waypoint: %2, after %3 tries",_grpidx,_targetPos,_tries2]};	
                                             };
 										};	
 										sleep 0.05;	
@@ -2054,7 +2055,7 @@ while {_loop} do {
 										if (!surfaceIsWater _targetPosTemp) then {
 											_targetPos = _targetPosTemp; 
 											_loop2 = TRUE;																			
-											if (KRON_UPS_Debug>0) then {diag_log format["KRON_UPS_Debug: Group %1 Man just got new TP %2, after %3 tries.",_grpidx,_targetPos,_tries2]};											
+											if (KRON_UPS_WP_Debug>0) then {diag_log format["KRON_UPS_WP_Debug: Group %1 Man just got new TP %2, after %3 tries.",_grpidx,_targetPos,_tries2]};											
 										};
 										sleep 0.05;	
 									};
@@ -2246,7 +2247,7 @@ while {_loop} do {
 									sleep 1;
 									//Execute control stuck for helys
 									[vehicle _npc] spawn MON_HeliStuckcontrol;
-									if (KRON_UPS_Debug>0 ) then {diag_log format["%1: flyingheight=%2 paradrop at dist=%3",_grpidx, _flyInHeight, _GetOutDist,_rnd]}; 
+									if (KRON_UPS_WP_Debug>0 ) then {diag_log format["%1: flyingheight=%2 paradrop at dist=%3",_grpidx, _flyInHeight, _GetOutDist,_rnd]}; 
 								};				
 							};							
 						};					
@@ -2265,7 +2266,7 @@ while {_loop} do {
 					_timeout = time + (_dist2/2);
 				
 					if ( count _unitsIn > 0) then {							
-						if (KRON_UPS_Debug>0 ) then {diag_log format["%1: Geting in combat vehicle targetdist=%2",_grpidx,_npc distance _target]}; 																						
+						if (KRON_UPS_AI_Debug>0 ) then {diag_log format["KRON_UPS_AI_Debug: Group %1: Getting in combat vehicle targetdist=%2",_grpidx,_npc distance _target]}; 																						
 						_npc setbehaviour "SAFE";
 						_npc setspeedmode "FULL";						
 						
@@ -2292,7 +2293,7 @@ while {_loop} do {
 									nul = [_vehicle,1000] spawn MON_domove;	
 									//Execute control stuck for helys
 									[_vehicle] spawn MON_HeliStuckcontrol;
-									if (KRON_UPS_Debug>0 ) then {diag_log format["%1: Getting in combat vehicle after",_grpidx,_npc distance _target]}; 	
+									if (KRON_UPS_AI_Debug>0 ) then {diag_log format["KRON_UPS_AI_DEBUG: Group %1: Getting in combat vehicle, distance %2",_grpidx,_npc distance _target]}; 	
 								};									
 							};
 							
@@ -2352,7 +2353,7 @@ while {_loop} do {
 			//Buildings usage.
 			if (!_GetIn_NearestVehicles) then {
 				if ( _wptype == "HOLD" && {vehicle _npc == _npc} && {( _fortify ||(random 100) < 60)} && {!_circledefend}) then {
-					if (KRON_UPS_Debug>0) then {diag_log format["KRON_UPS_DEBUG: Group %1: Moving to nearest buildings",_grpidx]}; 
+					if (KRON_UPS_AI_Debug>0) then {diag_log format["KRON_UPS_AI_DEBUG: Group %1: Moving to nearest buildings",_grpidx]}; 
 					[_npc,_buildingdist,false,_wait] spawn MON_moveNearestBuildings;				
 				} else {				
 					//If we are close enough patrol in buildings for searching enemies
@@ -2382,15 +2383,15 @@ while {_loop} do {
 				if ( _index == 1 || _index > count waypoints _grp && !isnull _grp) then {		
 					_wp = _grp addWaypoint [_targetPos, 0];									
 					_index = _wp select 1;															
-					 if (KRON_UPS_Debug>0) then {diag_log format["KRON_UPS_Debug: Group %1: created wp %2 index %3 at %4",_grpidx,_wp, _index,_targetPos]};
+					 if (KRON_UPS_WP_Debug>0) then {diag_log format["KRON_UPS_WP_Debug: Group %1: created wp %2 index %3 at %4",_grpidx,_wp, _index,_targetPos]};
 				} else {
                     if ( _index == 0 ) then {		
                         _wp = _grp addWaypoint [_targetPos, 0];									
                         _index = _wp select 1;															
-                        if (KRON_UPS_Debug>0) then {diag_log format["KRON_UPS_Debug: Group %1: 0 wp issue: created wp %2 index %3 at %4",_grpidx,_wp, _index,_targetPos]};
+                        if (KRON_UPS_WP_Debug>0) then {diag_log format["KRON_UPS_WP_Debug: Group %1: 0 wp issue: created wp %2 index %3 at %4",_grpidx,_wp, _index,_targetPos]};
                     } else {
                         _wp = [_grp,_index];
-                        if (KRON_UPS_Debug>0) then {diag_log format["KRON_UPS_Debug: Group %1: did NOT create a wp %2 index %3 %4",_grpidx,_wp, _index,_targetPos]}; 
+                        if (KRON_UPS_WP_Debug>0) then {diag_log format["KRON_UPS_WP_Debug: Group %1: did NOT create a wp %2 index %3 %4",_grpidx,_wp, _index,_targetPos]}; 
                     };
 				};
 			};
@@ -2423,7 +2424,7 @@ while {_loop} do {
             } foreach waypoints _grp;
 			
 							
-			if (KRON_UPS_Debug>0) then {diag_log format["KRON_UPS_Debug: Group %1: waypoints %2",_grpidx,count waypoints _grp]};
+			if (KRON_UPS_WP_Debug>0) then {diag_log format["KRON_UPS_WP_Debug: Group %1: waypoints %2",_grpidx,count waypoints _grp]};
 			
 			//Sets behaviour
 			if (toupper(behaviour _npc) != toupper (_Behaviour)) then {
@@ -2486,8 +2487,11 @@ while {_loop} do {
     
     
    	// check external loop switch
+    _cont = 1;
     _npcname = vehicleVarname _npc;
 	_cont = (call compile format ["KRON_UPS_%1",_npcname]);
+    
+    if(SAR_DEBUG) then {diag_log format ["_cont = %1 for leader: %2", _cont, format ["KRON_UPS_%1",_npcname]];};
 	
     if (_cont==0) then { // exit loop criterium
         _exit=true;
@@ -2631,7 +2635,7 @@ if (_respawn && {_respawnmax > 0} &&  {!_surrended}) then {
         if (!_unitcheck) then { // trigger is deactivated, do not respawn
         
             _allow_respawn = false;
-            diag_log format["Trigger is deactivated, deny respawn for a dynamic group!",_unitcheck];
+            if(SAR_DEBUG) then {diag_log format["SAR_DEBUG: Trigger is deactivated, deny respawn for a dynamic group!",_unitcheck];};
             
         };
     };
@@ -2705,6 +2709,7 @@ if (_respawn && {_respawnmax > 0} &&  {!_surrended}) then {
         _leader disableAI "FSM";
         
         _leaderskills = call compile format ["SAR_leader_%1_skills",_type];
+        
         _leader_weapon_names = ["leader",_type] call SAR_unit_loadout_weapons;
 
         _leader_items = ["leader",_type] call SAR_unit_loadout_items;
@@ -2784,37 +2789,43 @@ if (_respawn && {_respawnmax > 0} &&  {!_surrended}) then {
                     {
                         if (_x in SAR_soldier_sold_list) then {
                             _unittype = "soldier";
+                            _loadouttype = "rifleman";
                         };
 
                         if (_x in SAR_sniper_sold_list) then {
                             _unittype = "sniper";
+                            _loadouttype = "sniper";
                         };
                     };
                     case "survivors":
                     {
                         if (_x in SAR_soldier_surv_list) then {
                             _unittype = "soldier";
+                            _loadouttype = "rifleman";
                         };
 
                         if (_x in SAR_sniper_surv_list) then {
                             _unittype = "sniper";
+                            _loadouttype = "sniper";
                         };
                     };
                     case "bandits":
                     {
                         if (_x in SAR_soldier_band_list) then {
                             _unittype = "soldier";
+                            _loadouttype = "rifleman";
                         };
 
                         if (_x in SAR_sniper_band_list) then {
                             _unittype = "sniper";
+                            _loadouttype = "sniper";
                         };
                     };
                 };
                 
-                _unit_weapon_names = [_unittype,_type] call SAR_unit_loadout_weapons;
-                _unit_items = [_unittype,_type] call SAR_unit_loadout_items;
-                _unit_tools = [_unittype,_type] call SAR_unit_loadout_tools;                                    
+                _unit_weapon_names = [_loadouttype,_type] call SAR_unit_loadout_weapons;
+                _unit_items = [_loadouttype,_type] call SAR_unit_loadout_items;
+                _unit_tools = [_loadouttype,_type] call SAR_unit_loadout_tools;                                    
 
                 _unit_skills = call compile format ["SAR_%2_%1_skills",_type,_unittype];
                 
@@ -2968,7 +2979,7 @@ if (_respawn && {_respawnmax > 0} &&  {!_surrended}) then {
                 // set counter for the whole group
                 _tmp_count_units = _tmp_count_units + _tmp_cargo_units;
 
-                // first car we poulate with the leader as a driver
+                // first car we populate with the leader as a driver
                 if(_tmp_vehicle_number == 0) then {
 
                     // set the leader as driver
@@ -3006,6 +3017,8 @@ if (_respawn && {_respawnmax > 0} &&  {!_surrended}) then {
                 {
                     if(_foreachIndex > 0) then {
                         _x moveInTurret [_veh,[0]];
+                    } else {
+                        _x moveindriver _veh;
                     };
                 } foreach units _leader;
             };
