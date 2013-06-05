@@ -3,10 +3,10 @@
 //Put this line at the bottom of your init.sqf "execVM "fixes\effects.sqf";" and your good to go! Thanks, Tiger.
 
 //Clear contrast 
-_hndl = ppEffectCreate ["colorCorrections", 1501];
-_hndl ppEffectEnable true;
-_hndl ppEffectAdjust [ 1, 1, 0, [0, 0, 0, -0.31],[1.9, 1.9, 1.73, 0.7],[0.2, 1.1, -1.5, 1.64]];
-_hndl ppEffectCommit 0;
+//_hndl = ppEffectCreate ["colorCorrections", 1501];
+//_hndl ppEffectEnable true;
+//_hndl ppEffectAdjust [ 1, 1, 0, [0, 0, 0, -0.31],[1.9, 1.9, 1.73, 0.7],[0.2, 1.1, -1.5, 1.64]];
+//_hndl ppEffectCommit 0;
 
 //Wasteland 
 //_hndl = ppEffectCreate ["colorCorrections", 1501];
@@ -45,10 +45,10 @@ _hndl ppEffectCommit 0;
 //_hndl ppEffectCommit 0;
 
 //Photo
-//_hndl = ppEffectCreate ["colorCorrections", 1501];
-//_hndl ppEffectEnable true;
-//_hndl ppEffectAdjust [ 0.2050, 35, 0, [6.32, 0.57, 10.71, -0.0015],[1.29, 0.81, 1.2, 0.67],[-1.24, 2.03, 0.37, -3.69]];
-//_hndl ppEffectCommit 0;
+_hndl = ppEffectCreate ["colorCorrections", 1501];
+_hndl ppEffectEnable true;
+_hndl ppEffectAdjust [ 0.2050, 35, 0, [6.32, 0.57, 10.71, -0.0015],[1.29, 0.81, 1.2, 0.67],[-1.24, 2.03, 0.37, -3.69]];
+_hndl ppEffectCommit 0;
 
 //WarZone
 //_hndl = ppEffectCreate ["colorCorrections", 1501];
