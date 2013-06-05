@@ -12,6 +12,7 @@ hiveInUse	=	true;
 dayzHiveRequest = [];
 initialized = false;
 dayz_previousID = 0;
+//Lift Tow Script
 _logistic = execVM "=BTC=_Logistic\=BTC=_Logistic_Init.sqf";
 _logistic = execVM "=BTC=_LogisticTow\=BTC=_Logistic_Init.sqf";
 penaltyTimeout = true;
@@ -84,6 +85,7 @@ if (!isDedicated) then {
    call compile preprocessfile "addons\SHK_pos\shk_pos_init.sqf";
    // run SAR_AI
    [] execVM "addons\SARGE\SAR_AI_init.sqf";
+   //Color Correction
  if (!isDedicated) then {
     [] execVM "fixes\effects.sqf";
     };
