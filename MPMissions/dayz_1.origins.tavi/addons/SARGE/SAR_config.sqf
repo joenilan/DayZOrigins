@@ -144,7 +144,7 @@ SAR_respawn_waittime = 90; // default 30 seconds
 SAR_DESPAWN_TIMEOUT = 120; // 2 minutes
 
 // time after which dead AI bodies are deleted 
-SAR_DELETE_TIMEOUT = 120; // 2 minutes
+SAR_DELETE_TIMEOUT = 600; // 2 minutes
 
 // -----------------------------------------------
 // System performance 
@@ -173,21 +173,21 @@ SAR_REAMMO_INTERVAL = 30;
 SAR_HITKILL_DEBUG = false;
 
 // Shows extra debug info in .rpt
-SAR_DEBUG = true;
+SAR_DEBUG = false;
 
 // careful with setting this, this shows a LOT, including the grid properties and definitions for every spawn and despawn event
-SAR_EXTREME_DEBUG = true;
+SAR_EXTREME_DEBUG = false;
 
 //
 // SET THIS TO 0 to hide the group markers on the map and see the UPSMON group debug messages
 // Possible values: 1 = enabled, 0 = disabled
-KRON_UPS_Debug = 1;
+KRON_UPS_Debug = 0;
 
 //
 // SET THIS TO 1 to see waypoints and pathfinding information in your rpt
 // Possible values: 1 = enabled, 0 = disabled
 
-KRON_UPS_WP_Debug = 1;
+KRON_UPS_WP_Debug = 0;
 
 //
 // SET THIS TO 1 to enable AI debugging in the rpt. You will be able to debug targets / enemy handling
