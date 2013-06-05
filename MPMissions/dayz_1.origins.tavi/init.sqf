@@ -86,7 +86,7 @@ if (!isDedicated) then {
    // run SAR_AI
    [] execVM "addons\SARGE\SAR_AI_init.sqf";
    //Color Correction
- if (!isDedicated) then {
-    [] execVM "fixes\effects.sqf";
-    };
+ //if (!isDedicated) then {
+ //   [] execVM "fixes\effects.sqf";
+ //   };
 	_fast_roping = [] execVM "=BTC=_fast_roping\=BTC=_fast_roping_init.sqf";
