@@ -171,6 +171,8 @@ INSERT INTO `object_classes` VALUES ('ori_vil_truck_civ1', '0.7', '4', '0', '[[\
 INSERT INTO `object_classes` VALUES ('ori_vil_truck_civ', '0.7', '4', '0', '[[\"sklo_p\",1],[\"sklo_p1\",1],[\"sklo_l1\",1],[\"levy predni tlumic\",1],[\"levy zadni tlumic\",1],[\"pravy zadni tlumic\",1],[\"karoserie\",0.9],[\"palivo\",0.6],[\"motor\",0.2],[\"front_plow\",1],[\"wheel_guards\",1],[\"window_guards\",1],[\"windshield_guard\",1]]');
 INSERT INTO `object_classes` VALUES ('ori_vil_lublin_truck', '0.7', '4', '0', '[[\"sklo_p\",1],[\"sklo_p1\",1],[\"sklo_l1\",1],[\"levy predni tlumic\",1],[\"levy zadni tlumic\",0.2],[\"pravy predni tlumic\",1],[\"pravy zadni tlumic\",1],[\"karoserie\",0.7],[\"palivo\",0.2],[\"sklo predni P\",1],[\"motor\",0.7],[\"front_plow\",1],[\"wheel_guards\",1],[\"window_guards\",1],[\"windshield_guard\",1]]');
 INSERT INTO `object_classes` VALUES ('rth_amphicar', '0.7', '15', '0.05', '[[\"LF_hit\",1],[\"LM_hit\",1],[\"LB_hit\",0.4],[\"RF_hit\",1],[\"RM_hit\",1],[\"RB_hit\",1],[\"motor\",0.8]]');
+INSERT INTO `object_classes` VALUES ('origins_bathmobile', '0.7', '15', '0.05', '[[\"motor\",0.8],[\"karoserie\",1],[\"palivo\",0.8],[\"wheel_1_1_steering\",1],[\"wheel_2_1_steering\",1],[\"wheel_1_2_steering\",1],[\"wheel_2_2_steering\",1],[\"sklo predni P\",1],[\"sklo predni L\",1],[\"front_plow\",1],[\"wheel_guards\",1],[\"windshield_guard\",1]]');
+
 
 -- ----------------------------
 -- Table structure for `object_data`
@@ -487,7 +489,7 @@ INSERT INTO `object_spawns` VALUES ('0000000000303', 'Old_bike_TK_CIV_EP1', '[21
 INSERT INTO `object_spawns` VALUES ('0000000000304', 'Mi17_DZ', '[136,[7754.04,4266.49,0]]', 'Branibor Tv-tower');
 INSERT INTO `object_spawns` VALUES ('0000000000305', 'UH1H_DZ', '[180,[9349.95,4662.88,0]]', 'NPP');
 INSERT INTO `object_spawns` VALUES ('0000000000306', 'AH6X_DZ', '[117,[11574.3,648.71,0]]', 'Shore at Blato');
-INSERT INTO `object_spawns` VALUES ('0000000000307', 'rth_copter_green', '[38,[9320.15,7765.53,0]]', 'Krasnoznamen\'sk');
+INSERT INTO `object_spawns` VALUES ('0000000000307', 'rth_copter_green', '[38,[9320.15,7765.53,0]]', 'Krasnoznamensk');
 INSERT INTO `object_spawns` VALUES ('0000000000308', 'UH1H_DZ', '[252,[5317.76,8620.61,0]]', 'Bilgrad Na Moru');
 INSERT INTO `object_spawns` VALUES ('0000000000309', 'AH6X_DZ', '[325,[5987.66,9657.02,0]]', 'Chernovar next to the broken barn');
 INSERT INTO `object_spawns` VALUES ('0000000000310', 'Mi17_DZ', '[1,[15379.4,9707.99,0]]', 'Sabina Hospital');
@@ -503,11 +505,11 @@ INSERT INTO `object_spawns` VALUES ('0000000000319', 'Pickup_PK_DZ', '[229,[1103
 INSERT INTO `object_spawns` VALUES ('0000000000320', 'UAZ_MG_DZ', '[32,[9336.4,5230.6,0]]', 'military base east of Kryvoe');
 INSERT INTO `object_spawns` VALUES ('0000000000321', 'Pickup_PK_DZ', '[217,[7749.32,7894.98,0]]', 'Krasnoznamensk Airfield');
 INSERT INTO `object_spawns` VALUES ('0000000000322', 'UAZ_MG_DZ', '[5,[5837.59,9956.13,0]]', 'Chernova Police Station');
-INSERT INTO `object_spawns` VALUES ('0000000000323', 'Pickup_PK_DZ', '[9,[13368,8591.33,0]]', 'Chertova Styena');
+INSERT INTO `object_spawns` VALUES ('0000000000323', 'origins_bathmobile', '[9,[13368,8591.33,0]]', 'Chertova Styena');
 INSERT INTO `object_spawns` VALUES ('0000000000324', 'UAZ_MG_DZ', '[163,[17207.3,5650.31,0]]', 'military base south of Stare Pole');
 INSERT INTO `object_spawns` VALUES ('0000000000325', 'Pickup_PK_DZ', '[89,[16428.8,14267.4,0]]', 'Martin military base ( barracks)');
 INSERT INTO `object_spawns` VALUES ('0000000000326', 'UAZ_MG_DZ', '[68,[12604.4,14406.3,0]]', 'Chrveni Gradok firestation');
-INSERT INTO `object_spawns` VALUES ('0000000000327', 'Pickup_PK_DZ', '[59,[11098.3,18706.2,0]]', 'Ekaterinburg');
+INSERT INTO `object_spawns` VALUES ('0000000000327', 'origins_bathmobile', '[59,[11098.3,18706.2,0]]', 'Ekaterinburg');
 INSERT INTO `object_spawns` VALUES ('0000000000328', 'UAZ_MG_DZ', '[238,[14011.1,12408.4,0]]', 'Solibor military base');
 INSERT INTO `object_spawns` VALUES ('0000500000329', 'PBX_DZ', '[210,[5305.11,9213.32,0]]', 'Shore near Bilgrad Na Moru');
 INSERT INTO `object_spawns` VALUES ('0000500000330', 'Fishing_Boat_DZ', '[39,[4893.85,8662.77,0]]', 'Shore of Primorsk');
@@ -1030,7 +1032,6 @@ DECLARE i INT DEFAULT 1;
 
 
 CALL pCleanup();
-CALL pMoveDead();
 
 SELECT COUNT(*) 
 	INTO iNumVehExisting
