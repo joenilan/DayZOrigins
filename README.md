@@ -36,13 +36,7 @@ Special thanks to .=QUACK=.Major.Pain for his Github! https://github.com/MajorPa
 ============================
 
 In <b>/Debug/player_spawn_2.sqf</b>
-Look for:
-<pre>
-	<t size='1.15' font='Bitstream' color='#D60000'>DayZ Origins</t><br/>
-	<t size='1.15' font='Bitstream' color='#5882FA'>Survived %7 Days</t><br/>
-</pre>
-    
-Edit the first line.
+Look for 'DayZ Origins' on line 390 and change it to your liking.
 
 <u><b>Enabling/Editing Login Camera</b></u>
 ============================
