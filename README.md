@@ -79,7 +79,7 @@ Heli Crash Animations<br/>
 
 <u><b>Bugs:</b></u>
 ============================
-Script Restriction #20 Enabling Battleye<br/>
+<s>Script Restriction #20 Enabling Battleye</s><br/>
 Possible AI Lag<br/>
 House loot disappears, bug has something to do with lag when choosing to unlock house twice.<br/>
 Death Graves don't work (Uses bodies instead)<br/>
