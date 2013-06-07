@@ -71,7 +71,6 @@ Sarge's AI / (Modify /addons/SARGE/SAR_config.sqf to your liking.)<br/>
 Self Bloodbag<br/>
 Lift/Tow / (Needs Survival Vehicle modifications)<br/>
 Fast Rope / (Needs testing)<br/>
-Earthquakes<br/><br/>
 
 <b>Working On:</b><br/>
 Air Dropped Cars<br/>
