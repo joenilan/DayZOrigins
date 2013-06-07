@@ -41,6 +41,8 @@ BTC_get_liftable_array =
 		case "CH_47F_BAF"      : {_array = ["LandVehicle","ReammoBox","StaticWeapon","Static","Air"];};
 		case "Mi17_TK_EP1"     : {_array = ["LandVehicle","ReammoBox","StaticWeapon","Static","Air"];};
 		case "Mi171Sh_CZ_EP1"  : {_array = ["LandVehicle","ReammoBox","StaticWeapon","Static","Air"];};
+		case "rth_copter_green"           : {_array = ["LandVehicle","Motorcycle","ReammoBox","Car","StaticWeapon","Static","Truck","Wheeled_APC","Tracked_APC","Air"];};
+		case "rth_copter_yellow"           : {_array = ["LandVehicle","Motorcycle","ReammoBox","Car","StaticWeapon","Static","Truck","Wheeled_APC","Tracked_APC","Air"];};
 	};
 	_array
 };

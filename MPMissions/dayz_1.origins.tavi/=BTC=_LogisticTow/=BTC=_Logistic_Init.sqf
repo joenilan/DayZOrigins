@@ -37,7 +37,8 @@ BTC_get_towable_array =
      case "UAZ_Unarmed_UN_EP1"    : {_array = ["Air","LandVehicle","car","AH64D_EP1","Mi24_D","Mi24_P","Mi24_V","AH6X_DZ","UH1H_DZ","Ship","Motorcycle","A10_US_EP1","AH1Z","MH60S","A10","AV8B2","Su39","kh_maule_m7_white","AN2_DZ","Su34"];};
      case "UAZ_RU"    : {_array = ["Air","LandVehicle","car","AH64D_EP1","Mi24_D","Mi24_P","Mi24_V","AH6X_DZ","UH1H_DZ","Ship","Motorcycle","A10_US_EP1","AH1Z","MH60S","A10","AV8B2","Su39","kh_maule_m7_white","AN2_DZ","Su34"];};
      case "ATV_US_EP1"    : {_array = ["Air","LandVehicle","car","AH64D_EP1","Mi24_D","Mi24_P","Mi24_V","AH6X_DZ","UH1H_DZ","Ship","Motorcycle","A10_US_EP1","AH1Z","MH60S","A10","AV8B2","Su39","kh_maule_m7_white","AN2_DZ","Su34"];};
-	 case "UralCivil2"    : {_array = ["Air","LandVehicle","car","AH64D_EP1","Mi24_D","Mi24_P","Mi24_V","AH6X_DZ","UH1H_DZ","Ship","Motorcycle","A10_US_EP1","AH1Z","MH60S","A10","AV8B2","Su39","kh_maule_m7_white","AN2_DZ","Su34","Su34"];};
+	 case "rth_copter_green"    : {_array = ["Air","LandVehicle","car","AH64D_EP1","Mi24_D","Mi24_P","Mi24_V","AH6X_DZ","UH1H_DZ","Ship","Motorcycle","A10_US_EP1","AH1Z","MH60S","A10","AV8B2","Su39","kh_maule_m7_white","AN2_DZ","Su34","Su34"];};
+	 case "rth_copter_yellow"    : {_array = ["Air","LandVehicle","car","AH64D_EP1","Mi24_D","Mi24_P","Mi24_V","AH6X_DZ","UH1H_DZ","Ship","Motorcycle","A10_US_EP1","AH1Z","MH60S","A10","AV8B2","Su39","kh_maule_m7_white","AN2_DZ","Su34","Su34"];};
 	};
 	_array
 };
