@@ -28,11 +28,8 @@ disco_playerMorph =     compile preprocessFileLineNumbers "\z\addons\dayz_server
 disco_damageHandler =    compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\disco_damageHandler.sqf";
 disco_playerDeath  =    compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\disco_playerDeath.sqf"; 
 server_spawnCrashSite  =    compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_spawnCrashSite.sqf";
-server_cardrop  =    compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_cardrop.sqf";
 server_carAN2  =    compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_carAN2.sqf";
-server_spawnC130CrashSite = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_spawnC130CrashSite.sqf";
-server_spawnAN2 = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_spawnAN2.sqf";
-server_carepackagedrop = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_carepackagedrop.sqf"
+server_cardrop  =    compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_cardrop.sqf";
 botPlayers = [];
 
 vehicle_handleInteract = {

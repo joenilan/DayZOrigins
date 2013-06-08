@@ -1816,31 +1816,3 @@ nul =    [
                 1,        //Amount of Random-Waypoints the Heli gets before he flys to his Point-Of-Crash (using Static-Crashpoint-Coordinates if its enabled)
                 1         //Amount of Damage the Heli has to get while in-air to explode before the POC. (0.0001 = Insta-Explode when any damage//bullethit, 1 = Only Explode when completly damaged)
             ] spawn server_spawnCrashSite;
-nul =    [
-                7,
-                5,
-                700,
-                0,
-                0.99,
-                'center',
-                4000,
-                true,
-                false,
-                true,
-                5,
-                1
-            ] spawn server_spawnC130CrashSite;
-nul =    [
-                6,        //Number of the guaranteed Loot-Piles at the Crashside
-                3,        //Number of the random Loot-Piles at the Crashside 3+(1,2,3 or 4)
-                (50*60),    //Fixed-Time (in seconds) between each start of a new Chopper
-                (15*60),      //Random time (in seconds) added between each start of a new Chopper
-                0.75,        //Spawnchance of the Heli (1 will spawn all possible Choppers, 0.5 only 50% of them)
-                'center', //'center' Center-Marker for the Random-Crashpoints, for Chernarus this is a point near Stary
-                8000,    // [106,[960.577,3480.34,0.002]]Radius in Meters from the Center-Marker in which the Choppers can crash and get waypoints
-                true,    //Should the spawned crashsite burn (at night) & have smoke?
-                false,    //Should the flames & smoke fade after a while?
-                2,    //RANDOM WP
-                3,        //GUARANTEED WP
-                1        //Amount of Damage the Heli has to get while in-air to explode before the POC. (0.0001 = Insta-Explode when any damage//bullethit, 1 = Only Explode when completly damaged)
-            ] spawn server_spawnAN2;
