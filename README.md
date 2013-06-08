@@ -53,6 +53,19 @@ _welcomeMessage = format["Welcome to DayZ Origin Servers %1, Enjoy your stay!",f
 Edit this line to your liking.
 </pre>
 
+<u><b>Enabling Admin Tools</b></u>
+============================
+
+In <b>/admintools/Activate.sqf</b> Look for:
+<pre>if ((getPlayerUID player) in ["#######"]) then {
+Change "#######" to your Player ID
+</pre>
+
+In <b>/admintools/AdminToolsMain.sqf</b> Look for:
+<pre>if ((getPlayerUID player) in ["#######"]) then {
+Change "#######" to your Player ID
+</pre>
+
 <u><b>Finishing Up!</b></u>
 ============================
 
@@ -65,7 +78,8 @@ Edit this line to your liking.
 ============================
 
 <b>Available:</b><br/>
-Color Corrections / (Clear Contrast, will test others later)<br/> - Disabled
+Admin Tools
+Color Corrections / (Clear Contrast, will test others later)<br/> - //Commented out in init.sqf
 Air Dropped Cars<br/> - (Needs coordinated for Taviana)
 Auto Refueling<br/>
 Sarge's AI / (Modify /addons/SARGE/SAR_config.sqf to your liking.)<br/>
