@@ -65,7 +65,8 @@ Edit this line to your liking.
 ============================
 
 <b>Available:</b><br/>
-Color Corrections / (Clear Contrast, will test others later)<br/>
+Color Corrections / (Clear Contrast, will test others later)<br/> - Disabled
+Air Dropped Cars<br/> - (Needs coordinated for Taviana)
 Auto Refueling<br/>
 Sarge's AI / (Modify /addons/SARGE/SAR_config.sqf to your liking.)<br/>
 Self Bloodbag<br/>
@@ -73,7 +74,6 @@ Lift/Tow / (Needs Survival Vehicle modifications)<br/>
 Fast Rope / (Needs testing)<br/>
 
 <b>Working On:</b><br/>
-Air Dropped Cars<br/>
 Air Dropped Care Packages<br/>
 Heli Crash Animations<br/>
 
