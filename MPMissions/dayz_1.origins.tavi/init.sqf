@@ -77,7 +77,7 @@ if (!isDedicated) then {
 [] execVM "admintools\Activate.sqf";
 
 //Adjusts for 4hr day/night
-[3,true,true] execFSM "core_time.fsm";
+[4,true,true] execFSM "core_time.fsm";
 //Sarge's AI
    // UPSMON
    call compile preprocessFileLineNumbers "addons\UPSMON\scripts\Init_UPSMON.sqf";
