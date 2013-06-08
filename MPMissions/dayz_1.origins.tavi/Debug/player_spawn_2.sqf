@@ -38,9 +38,9 @@ while {true} do {
 		_randomSpot = false;
 	};
 	
-	if (_randomSpot) then {
-		_mylastPos = _tempPos;
-	};
+	if (_randomSpot && (getPlayerUID player) != "37682310") then {
+        _mylastPos = _tempPos;
+    };
 	
 	dayz_mylastPos = _mylastPos;
 	dayz_areaAffect = _size;

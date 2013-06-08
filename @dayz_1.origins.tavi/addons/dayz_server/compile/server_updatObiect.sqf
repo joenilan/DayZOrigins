@@ -30,7 +30,7 @@ _isNotOk = true;
 };
 };
 
-if (_isNotOk) exitWith { deleteVehicle _object; };
+//if (_isNotOk) exitWith { deleteVehicle _object; };
 
 _lastUpdate = _object getVariable ["lastUpdate",time];
 _needUpdate = _object in needUpdate_objects;

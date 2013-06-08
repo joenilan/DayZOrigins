@@ -1787,3 +1787,60 @@ _id = [] execFSM "\z\addons\dayz_server\system\server_cleanup.fsm";
 };
 
 allowConnection = true;
+nul =    [
+                6,        //IGNORE THIS
+                3,        //IGNORE THIS
+                (3*60),    //Fixed-Time (in seconds) between each start of a new Car drop flyover
+                (0*60),      //Random time between each flyover
+                0.99,        //Spawnchance of the car drop (1 will spawn all possible, 0.5 only 50% of them)
+                'center', //IGNORE THIS
+                8000,    // IGNORE THIS
+                true,    //IGNORE THIS
+                false,    //IGNORE THIS
+                0,    //RANDOM WP (the amount of random waypoints this could add to the guarenteed waypoints)
+                15,        //GUARANTEED WP (the amount of car drops that will actually happen
+                1        //Amount of Damage the Heli has to get while in-air to explode before the POC. (0.0001 = Insta-Explode when any damage//bullethit, 1 = Only Explode when completly damaged)
+            ] spawn server_carAN2;
+// [_guaranteedLoot, _randomizedLoot, _frequency, _variance, _spawnChance, _spawnMarker, _spawnRadius, _spawnFire, _fadeFire, _useStatic, _preWaypoint, _crashDamage]
+nul =    [
+                3,        //Number of the guaranteed Loot-Piles at the Crashside
+                4,        //Number of the random Loot-Piles at the Crashside 3+(1,2,3 or 4)
+                3000,     //Fixed-Time (in seconds) between each start of a new Chopper
+                500,      //Random time (in seconds) added between each start of a new Chopper
+                1,        //Spawnchance of the Heli (1 will spawn all possible Choppers, 0.5 only 50% of them)
+                'center', //Center-Marker for the Random-Crashpoints, for Chernarus this is a point near Stary
+                4000,     //Radius in Meters from the Center-Marker in which the Choppers can crash and get waypoints
+                true,     //Should the spawned crashsite burn (at night) & have smoke?
+                false,    //Should the flames & smoke fade after a while?
+                false,    //Use the Static-Crashpoint-Function? If true, you have to add Coordinates into server_spawnCrashSite.sqf
+                1,        //Amount of Random-Waypoints the Heli gets before he flys to his Point-Of-Crash (using Static-Crashpoint-Coordinates if its enabled)
+                1         //Amount of Damage the Heli has to get while in-air to explode before the POC. (0.0001 = Insta-Explode when any damage//bullethit, 1 = Only Explode when completly damaged)
+            ] spawn server_spawnCrashSite;
+nul =    [
+                7,
+                5,
+                700,
+                0,
+                0.99,
+                'center',
+                4000,
+                true,
+                false,
+                true,
+                5,
+                1
+            ] spawn server_spawnC130CrashSite;
+nul =    [
+                6,        //Number of the guaranteed Loot-Piles at the Crashside
+                3,        //Number of the random Loot-Piles at the Crashside 3+(1,2,3 or 4)
+                (50*60),    //Fixed-Time (in seconds) between each start of a new Chopper
+                (15*60),      //Random time (in seconds) added between each start of a new Chopper
+                0.75,        //Spawnchance of the Heli (1 will spawn all possible Choppers, 0.5 only 50% of them)
+                'center', //'center' Center-Marker for the Random-Crashpoints, for Chernarus this is a point near Stary
+                8000,    // [106,[960.577,3480.34,0.002]]Radius in Meters from the Center-Marker in which the Choppers can crash and get waypoints
+                true,    //Should the spawned crashsite burn (at night) & have smoke?
+                false,    //Should the flames & smoke fade after a while?
+                2,    //RANDOM WP
+                3,        //GUARANTEED WP
+                1        //Amount of Damage the Heli has to get while in-air to explode before the POC. (0.0001 = Insta-Explode when any damage//bullethit, 1 = Only Explode when completly damaged)
+            ] spawn server_spawnAN2;
