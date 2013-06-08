@@ -1,0 +1,7 @@
+﻿Respawn = "BASE";
+RespawnDelay = 6;
+RespawnDialog = 0;
+
+#include "R3F_revive\dlg_attente_reanimation.h"
+
+DisabledAI = true;

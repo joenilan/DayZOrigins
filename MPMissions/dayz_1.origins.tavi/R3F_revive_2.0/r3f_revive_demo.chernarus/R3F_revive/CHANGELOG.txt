@@ -1,0 +1,30 @@
+v2.0
+- Drag body feature now implemented !
+- New method to define who can revive by selecting slots, classnames, ... (no longer restricted to medics)
+- The unconscious marker is removed when the player disconnects while waiting for being revived
+- Players are no longer killed involuntarily (wreck explosions, ...) while waiting for being revived
+- Players can no longer use trick/hack to revive themselves
+- Miscellaneous improvements
+
+v1.4
+- Added : the backpack and its content are restored after respawn
+- Fixed : player altitude when waiting for revive (in buildings, ...)
+- Improved : the player is no longer artificially hurted at the respawn position
+- Improved : code and documentation improvements
+
+v1.3
+- Compatibility to Arrowhead (ArmA2 compatibility still guaranted)
+- The stringtable.csv is replaced by an alternative simpler system
+- We now need to heal the dead body only once
+
+v1.2
+- Fix the altitude of the player when he becomes unconscious in a building, on a roof, a bridge, ...
+- The installation manual has been enhanced
+
+v1.1
+- The "respawn at camp" is now based on the "respawn_xxx" markers system
+- The revive requires now 1 to 4 (random) "heal" actions to make the revive process longer
+- There is now a briefing on the demo mission
+
+v1.0
+- First public release

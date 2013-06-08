@@ -1,0 +1,26 @@
+The tables can be generated via the script "R3F_ARTY_AND_LOG\R3F_ARTY\calcul_balistique\generer_table.sqf". Read the header of this file for more informations.
+One you generate the table, save it in a text file in the directory "R3F_ARTY_AND_LOG\R3F_ARTY\tables\".
+Then add an include line in the variable "R3F_ARTY_CFG_tables" in the file "R3F_ARTY_AND_LOG\R3F_ARTY\config.sqf".
+
+Les tables peuvent être générées grâce au script "R3F_ARTY_AND_LOG\R3F_ARTY\calcul_balistique\generer_table.sqf". Consulter l'en-tête de ce fichier pour plus d'informations.
+Une fois que vous avez générer la table, enregistrez là dans un fichier texte dans le répertoire "R3F_ARTY_AND_LOG\R3F_ARTY\tables\".
+Ensuite ajoutez une ligne d'inclusion dans la variable "R3F_ARTY_CFG_tables" du fichier "R3F_ARTY_AND_LOG\R3F_ARTY\config.sqf".
+
+Les fichiers de table doivent respecter le format suivant :
+The table files must respect the folowing format :
+
+[
+    // Méta-données (meta-data)
+    [
+        vitesse initiale, (initial velocity)
+        coef frottement, (friction coef)
+        [liste des altitudes d'impact], // ordonné croissant (list of impact altitudes, ascendant sorted)
+        [liste des angles correspondants aux indices dans les tableaux qui suivent] // ordonné croissant (liste of angles, ascendant sorted)
+    ],
+    // Données  (data)
+    [
+        [portée arrondie à l'inférieur pour chaque angle pour la première altitude d'impact], (floored range for each angle for the first impact altitude)
+        [portée arrondie à l'inférieur pour chaque angle pour la deuxième altitude d'impact], (floored range for each angle for the second impact altitude)
+        ...
+    ]
+]
