@@ -66,6 +66,56 @@ In <b>/admintools/AdminToolsMain.sqf</b> Look for:
 Change "#######" to your Player ID
 </pre>
 
+
+<u><b>Adjusting Day/Night Time</b></u>
+============================
+
+- Edit \MPMissions\dayz_1.origins.tavi\init.sqf
+- Look for:
+<pre>
+[3,true,true] execFSM "core_time.fsm";
+</pre>
+- Default is currently 4hr day/night.
+- Other examples:<br>
+--- [4,true,true] execFSM "core_time.fsm"; (3hr day/night)<br>
+--- [3,true,true,12] execFSM "core_time.fsm"; (4hr day / 1 hr night)<br>
+- To disable completely, just add a double slash to the front of the line '//'
+
+<u><b>DMR Damage Scaling Removed</b></u>
+============================
+
+- Edit file: MPMissions/dayz_1.origins.tavi/BASTARDS/fn_damageHandler.sqf<br>
+- Look at lines 81-88.
+-If you would like DMR's to have the same damage as they would in cherno
+then keep or delete lines that are commented out starting with  "  /* if
+(_unit == player) then { "  if you want the new style DMR damage then
+uncomment out the code.
+
+<u><b>Increasing/Decreasing Zombies</b></u>
+============================
+
+- Edit \MPMissions\dayz_1.origins.tavi\BASTARDS\player_spawnCheck look for:
+<pre>
+switch (_nearbytype) do {
+    default {
+        _maxZombies = 10;
+    };
+    case "NameLocal": {
+        _maxZombies = 10;
+    };
+    case "NameVillage": {
+        _maxZombies = 15;
+    };
+    case "NameCity": {
+        _maxZombies = 20;
+    };
+    case "NameCityCapital": {
+        _maxZombies = 20;
+    };
+};
+</pre>
+- Edit the values to your preference.
+
 <u><b>Finishing Up!</b></u>
 ============================
 
