@@ -47,7 +47,7 @@ if ((!isServer) && (player != player)) then
   waitUntil {time > 3};
 };
 
-//fnc_usec_selfActions =		compile preprocessFileLineNumbers "fix\fn_selfActions.sqf";
+fnc_usec_selfActions =		compile preprocessFileLineNumbers "debug\fn_selfActions.sqf";
 
 if (isServer) then {
 	hiveInUse	=	true;
