@@ -120,9 +120,15 @@ switch (_nearbytype) do {
 ============================
 
 - Copy all the files from your git download into your folder. (Make sure to maintain the same file structure)
-- Install your PBO tool if you haven't already.
+- Run Start Server.cmd and cross your fingers!
+
+Optional:
+If you want to modify files in the dayz_server or dayz_1.origins.tavi folders
+- Install your PBO tool if you haven't already (PBO Manager is nice)
+- Modify selected files.
 - Use the PBO tool to pack the \@dayz_1.origins.tavi\addons\dayz_server folder.
-(NOTE:  You can also pack the folder in the MPMissions folder, recommended but not required.)
+- Use the PBO tool to pack the \MPMissions\dayz_1.origins.tavi folder.
+- Run Start Server.cmd and cross your fingers!
 
 <u><b>Add-Ons</b></u>
 ============================
@@ -144,7 +150,6 @@ Heli Crash Animations<br/>
 <u><b>Bugs:</b></u>
 ============================
 Script Restriction #20 Enabling Battleye - (Temp Fix by changing 5 to 1 in scripts.txt)<br/>
-Possible AI Lag<br/>
 House loot disappears, bug has something to do with lag when choosing to unlock house twice.<br/>
 Death Graves don't work (Uses bodies instead) - (Currently Testing Fix)<br/>
 Logout Animation<br/><br/>
