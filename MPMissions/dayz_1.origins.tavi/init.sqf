@@ -47,7 +47,7 @@ if ((!isServer) && (player != player)) then
   waitUntil {time > 3};
 };
 
-fnc_usec_selfActions =		compile preprocessFileLineNumbers "debug\fn_selfActions.sqf";
+//fnc_usec_selfActions =		compile preprocessFileLineNumbers "fn_selfActions.sqf";
 
 if (isServer) then {
 	hiveInUse	=	true;
@@ -77,7 +77,7 @@ if (!isDedicated) then {
 [] execVM "admintools\Activate.sqf";
 
 //Adjusts for 4hr day/night
-[4,true,true] execFSM "core_time.fsm";
+[4,false,true] execFSM "core_time.fsm";
 //Sarge's AI
    // UPSMON
    call compile preprocessFileLineNumbers "addons\UPSMON\scripts\Init_UPSMON.sqf";

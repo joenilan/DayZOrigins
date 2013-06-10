@@ -346,9 +346,6 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 7))
 	} else {
 		player removeAction s_player_flipvehiclelight;
 		s_player_flipvehiclelight = -1;
-		//Gut Human
-		player removeAction s_player_butcher_human;
-		s_player_butcher_human = -1;
 	};
 
 	//Flip Heavy Vehicles - Only for cars, no Bus or Truck or wahtever bigger vehicle. Requires 5 ppl! - MRS
@@ -369,9 +366,6 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 7))
 		};
 	} else {
 		player removeAction s_player_flipvehicleheavy;
-				//Gut Human
-		player removeAction s_player_butcher_human;
-		s_player_butcher_human = -1;
 		s_player_flipvehicleheavy = -1;
 	};
 	*/
@@ -478,17 +472,6 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 7))
 		s_player_studybody = -1;
 	};	
 } else {
-    //####    Gut fools ####
-    if (!_isAlive and !_isZombie and !_isAnimal and !_isHarvested and _isMan and _hasKnife and _canDo) then {
-        if (s_player_butcher_human < 0) then {
-            s_player_butcher_human = player addAction [format["<t color='#42426F'>Gut Human%1</t>"], "fixes\gather_meat_human.sqf",cursorTarget, 3, true, true, "", ""];
-        };
-    } else {
-        player removeAction s_player_butcher_human;
-        s_player_butcher_human = -1;
-    };
- 
-    //##############################
 	//Engineering
 	{dayz_myCursorTarget removeAction _x} forEach s_player_repairActions;s_player_repairActions = [];
 	dayz_myCursorTarget = objNull;
