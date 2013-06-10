@@ -133,25 +133,25 @@ If you want to modify files in the dayz_server or dayz_1.origins.tavi folders
 <u><b>Add-Ons</b></u>
 ============================
 
-<b>Available:</b><br/>
+<b>Available/Working:</b><br/>
 Admin Tools
 Color Corrections / (Clear Contrast, will test others later)<br/> - //Commented out in init.sqf
 Air Dropped Cars<br/> - (Needs coordinated for Taviana)
 Auto Refueling<br/>
 Sarge's AI / (Modify /addons/SARGE/SAR_config.sqf to your liking.)<br/>
 Self Bloodbag<br/>
-Lift/Tow / (Needs Survival Vehicle modifications)<br/>
-Fast Rope / (Needs testing)<br/>
+
+<b>Implemented but not working:</b><br/>
+Lift/Tow / (Needs Survival Vehicle modifications) - Don't see any options<br/>
+Fast Rope / (Needs testing) - Works for Pilot, Passanger doesnt see option<br/>
 
 <b>Working On:</b><br/>
-Air Dropped Care Packages<br/>
-Heli Crash Animations<br/>
+Air Dropped Care Packages - I might not be good enough to implement<br/>
+Heli Crash Animations - I might not be good enough to implement<br/>
 
 <u><b>Bugs:</b></u>
 ============================
-Script Restriction #20 Enabling Battleye - (Temp Fix by changing 5 to 1 in scripts.txt)<br/>
 House loot disappears, bug has something to do with lag when choosing to unlock house twice.<br/>
-Death Graves don't work (Uses bodies instead) - (Currently Testing Fix)<br/>
-Logout Animation<br/><br/>
+Logout Animation<br/><br/> - This Server pack doesnt have Cloud Sync or Logout Animations
 
 (NOTE:  Folders inside the \MPMissions\ folder don't have to be packed to .pbo format)
