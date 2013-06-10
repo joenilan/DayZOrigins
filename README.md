@@ -134,9 +134,9 @@ If you want to modify files in the dayz_server or dayz_1.origins.tavi folders
 ============================
 
 <b>Available/Working:</b><br/>
-Admin Tools
-Color Corrections / (Clear Contrast, will test others later)<br/> - //Commented out in init.sqf
-Air Dropped Cars<br/> - (Needs coordinated for Taviana)
+Admin Tools<br/>
+Color Corrections / (Clear Contrast, will test others later) - //Commented out in init.sqf<br/>
+Air Dropped Cars - (South island only so far)<br/>
 Auto Refueling<br/>
 Sarge's AI / (Modify /addons/SARGE/SAR_config.sqf to your liking.)<br/>
 Self Bloodbag<br/>
@@ -151,7 +151,7 @@ Heli Crash Animations - I might not be good enough to implement<br/>
 
 <u><b>Bugs:</b></u>
 ============================
-House loot disappears, bug has something to do with lag when choosing to unlock house twice.<br/>
-Logout Animation<br/><br/> - This Server pack doesnt have Cloud Sync or Logout Animations
+House loot disappears, bug has something to do with lag when choosing to unlock house twice. - Possibly fixed<br/>
+Logout Animation - This Server pack doesnt have Cloud Sync or Logout Animations (Temporary)<br/><br/>
 
 (NOTE:  Folders inside the \MPMissions\ folder don't have to be packed to .pbo format)
